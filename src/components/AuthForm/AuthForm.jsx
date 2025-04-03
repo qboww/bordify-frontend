@@ -1,6 +1,6 @@
+import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import css from './AuthForm.module.css';
-// import Loader from '../Loader/Loader';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useDispatch, useSelector } from 'react-redux';
 import InputField from '../InputField/InputField';
@@ -10,7 +10,6 @@ import {
   selectIsVerified,
   selectUserEmail,
 } from '../../redux/user/userSelectors';
-import { useEffect } from 'react';
 import {
   selectModal,
   selectResendVerifyEmailModal,
@@ -34,30 +33,25 @@ const AuthForm = ({
   scheme,
   onSubmitThunk,
 }) => {
+  const [errorMessage, setErrorMessage] = useState('');
+  const dispatch = useDispatch();
   const userEmail = useSelector(selectUserEmail);
   const isVerified = useSelector(selectIsVerified);
-  const isResendVerifyEmailModalOpen = useSelector(
-    selectResendVerifyEmailModal
-  );
-
-  const dispatch = useDispatch();
+  const isResendVerifyEmailModalOpen = useSelector(selectResendVerifyEmailModal);
 
   useEffect(() => {
     if (isVerified === false) {
       dispatch(openResendVerifyEmailModal());
-
       dispatch(resendVerificationEmailThunk(userEmail));
-
       dispatch(setIsVerified());
     }
-  }, [isVerified, dispatch]);
+  }, [isVerified, dispatch, userEmail]);
 
-  const isLoading = false;
   const {
     register,
     handleSubmit,
     reset,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm({
     defaultValues: registerForm
       ? { username: '', email: '', password: '' }
@@ -66,15 +60,19 @@ const AuthForm = ({
     mode: 'onChange',
   });
 
-  const onSubmit = async data => {
+  const onSubmit = async (data) => {
+    setErrorMessage('');
     try {
-      await dispatch(onSubmitThunk(data)).unwrap();
-      toast.success('Login OK!');
-      await dispatch(setUserEmail(data));
-      dispatch(openResendVerifyEmailModal());
+      const result = await dispatch(onSubmitThunk(data)).unwrap();
+      if (registerForm) {
+        toast.success('Registration successful!');
+      } else {
+        toast.success('Login successful!');
+      }
       reset();
     } catch (error) {
-      toast.error('Something went wrong. Please try again.');
+      setErrorMessage(error.payload || 'Something went wrong');
+      toast.error(error.payload || 'Something went wrong');
     }
   };
 
@@ -94,7 +92,7 @@ const AuthForm = ({
       <form
         className={css.formStyle}
         onSubmit={handleSubmit(onSubmit)}
-        autoComplete="nope"
+        autoComplete="off"
       >
         {registerForm && (
           <InputField
@@ -103,19 +101,34 @@ const AuthForm = ({
             placeholder="Enter your name"
             register={register}
             errors={errors}
+            required
           />
         )}
+        
         <InputField
           type="email"
           name="email"
           placeholder="Enter your email"
           register={register}
           errors={errors}
+          required
         />
-        <InputPassword name="password" register={register} errors={errors} />
+        
+        <InputPassword 
+          name="password" 
+          register={register} 
+          errors={errors}
+          required
+        />
+        
+        {errorMessage && (
+          <div className={css.errorMessage}>{errorMessage}</div>
+        )}
+
         <Button
           className={css.buttonStyles}
           type="submit"
+          disabled={!isValid}
           buttonText={registerForm ? 'Register Now' : 'Log In Now'}
         />
       </form>

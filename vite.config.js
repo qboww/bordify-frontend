@@ -7,5 +7,5 @@ export default defineConfig({
   build: {
     sourcemap: true,
   },
-  base: "/node_bc70_front_AnnetaDe"
+  base: "/taskpro"
 });

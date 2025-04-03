@@ -12,7 +12,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <HelmetProvider>
-    <BrowserRouter basename="/node_bc70_front_AnnetaDe">
+    <BrowserRouter basename="/taskpro">
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <App />

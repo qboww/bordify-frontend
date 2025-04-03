@@ -16,14 +16,16 @@ export const registerThunk = createAsyncThunk(
   'auth/register',
   async (credentials, thunkApi) => {
     try {
+      console.log('Sending registration request with:', credentials); 
       const { data } = await taskProApiUnAutorized.post(
         'api/auth/register',
         credentials
       );
-
+      console.log('Registration response:', data); 
       return data;
     } catch (error) {
-      return thunkApi.rejectWithValue(error.message);
+      console.error('Registration error:', error.response?.data || error.message);
+      return thunkApi.rejectWithValue(error.response?.data || error.message);
     }
   }
 );
@@ -99,10 +101,6 @@ export const refreshUserThunk = createAsyncThunk(
     }
   }
 );
-
-// email: 'heidie@modulesdsh.com';
-// name: 'ann';
-// password: 'aaAA1111';
 
 export const updateUserPreferencesThunk = createAsyncThunk(
   'auth/updateUserPreferences',
