@@ -1,0 +1,48 @@
+.bgc_list {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  max-width: 252px;
+}
+
+.bgc_item {
+  list-style: none;
+  border-radius: 6px;
+  overflow: hidden;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid transparent;
+  transition: border-color var(--transition-pattern),
+    transform var(--transition-pattern);
+}
+
+.svg_icon {
+  stroke: var(--text-color);
+  opacity: 0.5;
+  transition: opacity var(--transition-pattern);
+}
+
+.bgc_item:hover .svg_icon,
+.bgc_item:focus .svg_icon,
+.bgc_item.selected .svg_icon {
+  opacity: 1;
+}
+
+.bgc_radio {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.bgc_item:hover,
+.bgc_item:focus,
+.bgc_item.selected {
+  transform: scale(1.1);
+  border-color: var(--button-background-color-hoover);
+}
+.bgc_item.selected {
+  border-color: var(--button-background-color);
+}

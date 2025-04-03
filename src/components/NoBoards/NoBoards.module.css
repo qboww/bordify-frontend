@@ -1,0 +1,10 @@
+.no_boards {
+  width: 35%;
+}
+.no_boards_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}

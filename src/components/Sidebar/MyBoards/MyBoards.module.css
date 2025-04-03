@@ -1,0 +1,140 @@
+.list {
+  /* outline: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-left: 0;
+  margin: 0;
+}
+
+.list:last-child {
+  margin-bottom: 40px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 61px;
+  width: 100%;
+}
+
+.item:not(:last-child) {
+  margin-bottom: 4px;
+}
+
+.navItem {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  min-width: 260px;
+  height: 100%;
+  text-decoration: none;
+  background-color: transparent;
+  opacity: 0.5;
+  transition: all 550ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border 550ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navItem:not(.active):hover {
+  border-bottom: 1px solid white;
+  margin-bottom: -1px;
+}
+
+.navItem:not(.active):hover div {
+  opacity: 1;
+}
+
+.navItem:active {
+  background-color: white;
+}
+
+.navItem.active {
+  background-color: white;
+  outline: none;
+  width: calc(100% + 24px);
+  padding-left: 24px;
+  margin-left: -24px;
+  opacity: 1;
+}
+
+.navItem.active div {
+  opacity: 1;
+}
+
+.navItem.active::after {
+  content: '';
+  display: flex;
+  border-radius: 4px 0px 0px 4px;
+  background: white;
+  width: 4px;
+  height: 61px;
+}
+
+.wrapperProjects {
+  display: flex;
+  align-items: center;
+  color: black;
+  border: none;
+  background: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.project {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.28px;
+  margin-left: 8px;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+  opacity: 0;
+  transition: all 350ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.wrapperIcons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.wrapperIcons:not(:last-child) {
+  margin-right: 8px;
+}
+
+.iconEdit {
+  width: 16px;
+  height: 16px;
+  color: black;
+  opacity: 0.5;
+  transition: color 350ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.iconEdit:hover,
+.iconEdit:focus {
+  color: blue;
+}
+
+.iconDelete {
+  width: 16px;
+  height: 16px;
+  color: black;
+  opacity: 0.5;
+  transition: color 350ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.iconDelete:hover,
+.iconDelete:focus {
+  color: blue;
+}

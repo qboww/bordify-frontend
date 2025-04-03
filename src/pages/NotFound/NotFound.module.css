@@ -1,0 +1,55 @@
+.container {
+  background: linear-gradient(180deg, #ffffff 25%, #bedbb0 92.19%);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 70px;
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    gap: 20px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .thumb {
+    width: 550px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .thumb {
+    width: 800px;
+  }
+}
+
+.img {
+  width: 800px;
+  height: 100%;
+  mix-blend-mode: multiply;
+}
+
+.button {
+  color: #fff;
+  background-color: #161616;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: var(--font-family);
+  width: 280px;
+  height: 49px;
+}
+
+@media only screen and (min-width: 375px) {
+  .button {
+    width: 335px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .button {
+    width: 344px;
+  }
+}

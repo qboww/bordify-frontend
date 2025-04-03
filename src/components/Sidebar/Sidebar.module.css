@@ -1,0 +1,90 @@
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  height: 100vh;
+  color: var(--text-color-sidebar);
+  background: var(--background-sidebar);
+  z-index: 100;
+  width: 225px;
+  transform: translateX(-100%);
+  /* transition: transform 3s cubic-bezier(0.165, 0.84, 0.44, 1); */
+  @media only screen and (min-width: 768px) {
+    width: 260px;
+  }
+}
+@media (max-width: 1439.99px) {
+  .container {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    bottom: 0;
+    transition: all 0.5s;
+    width: 225px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .container {
+    display: flex;
+    left: 0;
+    position: relative;
+    transform: translateX(0);
+    width: 260px;
+  }
+}
+@media (max-width: 1439.99px) {
+  .container.mobile {
+    transform: translateX(0);
+    left: 0;
+    display: flex;
+  }
+}
+.navigation {
+  width: 100%;
+  padding: 14px;
+  padding-bottom: 0;
+  @media only screen and (min-width: 768px) {
+    padding: 24px;
+    padding-bottom: 0;
+  }
+}
+
+.logo {
+  margin-bottom: 70px;
+  @media only screen and (min-width: 768px) {
+    margin-bottom: 60px;
+  }
+}
+.boards_list {
+  /* border: 1px solid red; */
+  flex: 1 1 auto;
+  /* width: 100%; */
+  overflow-y: auto;
+}
+
+.needHelp {
+  padding: 14px;
+  @media only screen and (min-width: 768px) {
+    padding: 24px;
+  }
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(21, 21, 21, 0.3);
+  z-index: 99;
+}
+
+@media (max-width: 1439.99px) {
+  .backdrop {
+    display: block;
+  }
+}

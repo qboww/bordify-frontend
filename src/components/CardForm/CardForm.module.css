@@ -1,0 +1,39 @@
+.form_styles {
+  width: 302px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 24px;
+  min-width: 272px;
+  width: 100%;
+  max-width: 287px;
+  .text_inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .bottom_inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    section {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    h2 {
+      font-weight: 500;
+      font-size: 14px;
+      opacity: 0.5;
+      letter-spacing: -0.02em;
+      color: var(--text-color);
+    }
+    @media only screen and (min-width: 768px) {
+      width: 302px;
+    }
+  }
+
+  .btn {
+    margin-top: 16px;
+  }
+}

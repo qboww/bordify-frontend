@@ -1,0 +1,185 @@
+@import url('./css/fonts.css');
+@import url('./css/reset.css');
+@import 'react-datepicker/dist/react-datepicker.css';
+
+:root {
+  --font-family: 'Poppins', sans-serif;
+  --text-color: #ffffff;
+  --background-color: #232323;
+  --button-background-color-hoover: #bedbb0;
+  --button-background-color: #9dc888;
+  --button-text-color: #161616;
+  --transition-pattern: 250ms ease-in;
+  --without-priority-background-color: #1616164d;
+  --low-priority-background-color: #8fa1d0;
+  --medium-priority-background-color: #e09cb5;
+  --high-priority-background-color: #bedbb0;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+[theme='dark'] {
+  --text-color: #ffffff;
+  --text-color-sidebar: #ffffff;
+  --background-color: #232323;
+  --background-header: #161616;
+  --background-sidebar: #121212;
+  --background-logo: #232323;
+  --button-background-color-hoover: #9dc888;
+  --button-background-color: #bedbb0;
+  --button-text-color: #161616;
+  --button-icon-color: #fff;
+  --header-arrow-color: #ffffffcc;
+  --secondary-btn-bgc: #121212;
+  --secondary-btn-icon-bgc: #fff;
+  --small-btn-bgc: #bedbb0;
+  --small-btn-bgc-hover: #9dc888;
+  --small-btn-color: #121212;
+  --logo-icon-bgc: #1f1f1f;
+  --logo-icon-fill: #fff;
+  --logo-text-color: #fff;
+  --user-icon-fill: #151515;
+  --user-icon-bgc: #1f1f1f;
+  --input-bgc: #1f1f1f;
+  --input-border: #bedbb0;
+  --input-text-color: #ffffff;
+  --input-box-shadow: rgba(22, 22, 22, 0.08);
+  --logout-icon-color: rgba(190, 219, 176, 1);
+  --need-help-bgc: #1f1f1f;
+  --border-sidebar: rgba(255, 255, 255, 0.1);
+  --sidebar-board-item-bgc: rgba(31, 31, 31, 0.4);
+  --task-line: #ffffff1a;
+  --task-main: #ffffff80;
+  --dedline-bell: #bedbb0;
+  --board-scroll-thumb: rgba(255, 255, 255, 0.1);
+  --board-scroll-track: #161616;
+  --filter-separator: rgba(255, 255, 255, 0.1);
+  --filter-btn-color: rgba(255, 255, 255, 0.4);
+  --filter-btn-color-hover: rgba(255, 255, 255, 0.7);
+  --filter-bgc: #151515;
+}
+[theme='light'] {
+  --text-color: #000000;
+  --text-color-sidebar: #000000;
+  --background-color: #f6f6f7;
+  --background-header: #fcfcfc;
+  --background-sidebar: #ffffff;
+  --background-logo: #000000;
+  --button-background-color-hoover: #9dc888;
+  --button-background-color: #bedbb0;
+  --button-text-color: #161616;
+  --button-icon-color: #fff;
+  --header-arrow-color: #161616cc;
+  --secondary-btn-bgc: #fff;
+  --secondary-btn-icon-bgc: #161616;
+  --small-btn-bgc: #bedbb0;
+  --small-btn-bgc-hover: #9dc888;
+  --small-btn-color: #121212;
+  --logo-icon-bgc: #1f1f1f;
+  --logo-icon-fill: #fff;
+  --logo-text-color: #161616;
+  --user-icon-fill: #fff;
+  --user-icon-bgc: #f6f6f7;
+  --input-bgc: transparent;
+  --input-border: #bedbb0;
+  --input-text-color: #161616;
+  --input-box-shadow: rgba(22, 22, 22, 0.08);
+  --logout-icon-color: rgba(190, 219, 176, 1);
+  --need-help-bgc: #f6f6f7;
+  --border-sidebar: rgba(22, 22, 22, 0.1);
+  --sidebar-board-item-bgc: rgba(246, 246, 247, 0.4);
+  --task-line: #1616161a;
+  --task-main: rgba(22, 22, 22, 0.7);
+  --dedline-bell: #bedbb0;
+  --board-scroll-thumb: #e8e8e8;
+  --board-scroll-track: white;
+  --filter-separator: rgba(22, 22, 22, 0.1);
+  --filter-btn-color: rgba(22, 22, 22, 0.4);
+  --filter-btn-color-hover: rgb(22, 22, 22);
+  --filter-bgc: #fcfcfc;
+}
+[theme='violet'] {
+  --text-color: #000000;
+  --text-color-sidebar: #fff;
+  --background-color: #d6d8ff;
+  --background-header: #fff;
+  --background-sidebar: #5255bc;
+  --background-logo: #d6d8ff;
+  --button-background-color: #7b7ede;
+  --button-background-color-hoover: #5255bc;
+  --button-text-color: #ffffff;
+  --button-icon-color: #161616;
+  --header-arrow-color: #161616cc;
+  --secondary-btn-bgc: #fff;
+  --secondary-btn-icon-bgc: #5255bc;
+  --small-btn-bgc: #b8bcfd;
+  --small-btn-bgc-hover: #979cea;
+  --small-btn-color: #fff;
+  --logo-icon-bgc: #ecedfd;
+  --logo-icon-fill: #5255bc;
+  --logo-text-color: #fff;
+  --user-icon-fill: #fff;
+  --user-icon-bgc: #ecedfd;
+  --input-bgc: transparent;
+  --input-border: #5255bc;
+  --input-text-color: #161616;
+  --input-box-shadow: rgba(22, 22, 22, 0.08);
+  --logout-icon-color: #fff;
+  --need-help-bgc: rgba(236, 237, 253, 0.4);
+  --border-sidebar: rgba(255, 255, 255, 0.1);
+  --sidebar-board-item-bgc: rgba(255, 255, 255, 0.2);
+  --task-line: #1616161a;
+  --task-main: rgba(22, 22, 22, 0.7);
+  --dedline-bell: #5255bc;
+  --board-scroll-thumb: #b8bcfd;
+  --board-scroll-track: white;
+  --filter-separator: rgba(22, 22, 22, 0.1);
+  --filter-btn-color: rgba(22, 22, 22, 0.4);
+  --filter-btn-color-hover: rgb(22, 22, 22);
+  --filter-bgc: #fcfcfc;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+div {
+  margin: 0;
+  padding: 0;
+}
+
+/*Start Стилі  бібліотека react-datepicker */
+div .react-datepicker {
+  background-color: var(--background-header);
+  border: 1px solid var(--button-background-color);
+}
+div .react-datepicker__day--011 {
+  background-color: var(--button-background-color);
+  border-radius: 50px;
+}
+div .react-datepicker__day {
+  color: var(--text-color);
+}
+div .react-datepicker__header {
+  background-color: var(--background-header);
+}
+div .react-datepicker__day-name {
+  color: var(--header-arrow-color);
+}
+div .react-datepicker-ignore-onclickoutside {
+  border: none;
+  outline: none;
+  color: var(--button-background-color);
+  background-color: inherit;
+}
+/* End Стилі  бібліотека react-datepicker  */

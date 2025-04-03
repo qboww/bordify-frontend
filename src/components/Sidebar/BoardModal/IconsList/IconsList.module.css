@@ -1,0 +1,31 @@
+.icons_list {
+  display: flex;
+  gap: 12px;
+}
+
+.icon_item {
+  list-style: none;
+}
+
+.icon_radio {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+label {
+  cursor: pointer;
+}
+
+.icon_svg {
+  opacity: 0.5;
+  fill: none;
+  stroke: var(--text-color);
+  transition: opacity var(--transition-pattern);
+}
+
+.icon_svg:hover,
+.icon_svg:focus,
+.selected {
+  opacity: 1;
+}

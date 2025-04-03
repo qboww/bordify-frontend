@@ -1,0 +1,21 @@
+.taskActions {
+  margin-left: auto;
+  align-items: flex-end;
+  gap: 8px;
+}
+.taskIcon {
+  width: 16px;
+  height: 16px;
+  stroke: var(--input-text-color);
+  stroke-opacity: 0.5;
+  fill: none;
+}
+.btn_icon {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
+  padding: 2px;
+  align-items: center;
+  cursor: pointer;
+}

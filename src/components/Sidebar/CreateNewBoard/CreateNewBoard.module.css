@@ -1,0 +1,30 @@
+.boards {
+  margin-right: 24px;
+  padding-bottom: 8px;
+  text-align: left;
+}
+.text {
+  text-align: left;
+  margin-bottom: 8px;
+  font-size: 12px;
+  letter-spacing: -0.24px;
+  opacity: 0.5;
+}
+
+.create {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-sidebar);
+  border-top: 1px solid var(--border-sidebar);
+  font-weight: 500px;
+  padding: 14px 0;
+}
+
+.title {
+  width: 76px;
+  height: 42px;
+  font-weight: 500;
+  letter-spacing: -0.28px;
+  text-align: left;
+}

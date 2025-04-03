@@ -1,0 +1,195 @@
+.background {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0px;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(180deg, #ffffff 25%, #bedbb0 92.19%);
+}
+
+.formWrapper {
+  border-radius: 8px;
+  padding: 24px;
+  min-width: 320px;
+  max-width: 335px;
+  margin: 0 auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  background-color: #151515;
+  @media only screen and (min-width: 768px) {
+    padding: 40px;
+    width: 100%;
+    max-width: 424px;
+  }
+}
+.authNav {
+  display: flex;
+  gap: 14px;
+  /* margin: 40px 0 0 40px; */
+}
+
+.formStyle {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 14px;
+
+  margin: 0;
+  padding: 0;
+}
+
+/* .inputStyles {
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  margin: 0;
+  width: 100%;
+  height: 47px;
+  padding: 0px 0px 0px 18px;
+  background-color: #151515 !important;
+  border: 1px solid rgb(190, 219, 176);
+  border-radius: 8px;
+  color: rgb(255, 255, 255);
+
+  opacity: 0.5;
+  position: relative;
+
+  &:focus {
+    opacity: 1;
+    background-color: #151515 !important;
+  }
+
+  &:hover {
+    opacity: 1;
+    background-color: #151515 !important;
+  }
+  @media screen and (max-width: 374px) {
+    width: 248px;
+  }
+
+  @media screen and (min-width: 375px) {
+    width: 268px;
+  }
+  @media screen and (min-width: 768px) {
+    width: 324px;
+  }
+  @media screen and (min-width: 1440px) {
+    width: 324px;
+  }
+} */
+
+.svgStyles {
+  stroke: #fff;
+  width: 20px;
+}
+
+.buttonShowPassword {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0;
+  border: none;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  font-size: 2rem;
+  color: #fff;
+  stroke: #fff;
+  opacity: 0.4;
+  background-color: transparent;
+  cursor: pointer;
+  &:hover {
+    stroke: #fff;
+    fill: none;
+    opacity: 1;
+    background-color: transparent;
+  }
+}
+.errorStyles {
+  color: red;
+  font-size: 12px;
+  margin-left: 4px;
+
+  position: absolute;
+  bottom: -13px;
+  left: 0;
+}
+
+.passwordContainer {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.authLink {
+  height: 27px;
+  font-family: var(--font-family);
+  color: #ffffff;
+  display: inline-block;
+  /* padding-right: 14px; */
+  font-size: 18px;
+  font-weight: 500;
+}
+.buttonStyles {
+  width: 100%;
+  margin-top: 10px;
+  height: 49px;
+  padding: 14px 0;
+  font-weight: 500;
+  background: #bedbb0;
+  border-radius: 8px;
+  color: #161616;
+
+  &:hover {
+    background: #9dc888;
+  }
+
+  @media screen and (min-width: 375px) {
+    width: 287px;
+  }
+  @media screen and (min-width: 768px) {
+    width: 344px;
+  }
+  @media screen and (min-width: 1440px) {
+    width: 344px;
+  }
+}
+label {
+  position: relative;
+  color: #fff;
+}
+.activeAuthLink {
+  height: 27px;
+  text-decoration: none;
+  font-family: var(--font-family);
+  color: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  display: inline-block;
+  padding-right: 14px;
+  font-size: 18px;
+  font-weight: 500;
+
+  &:hover {
+    color: #ffffff;
+  }
+
+  &.active {
+    color: #ffffff;
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #151515 inset !important;
+  -webkit-text-fill-color: #fff !important;
+  background-color: transparent !important;
+}

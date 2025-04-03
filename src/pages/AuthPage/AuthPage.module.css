@@ -1,0 +1,65 @@
+.background {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0px;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(180deg, #ffffff 25%, #bedbb0 92.19%);
+}
+
+.formWrapper {
+  border-radius: 8px;
+  padding: 24px;
+  min-width: 320px;
+  max-width: 335px;
+  margin: 0 auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  background-color: #151515;
+  @media only screen and (min-width: 768px) {
+    padding: 40px;
+    width: 100%;
+    max-width: 424px;
+  }
+}
+.authNav {
+  display: flex;
+  gap: 14px;
+  /* margin: 40px 0 0 40px; */
+}
+.authLink {
+  height: 27px;
+  font-family: var(--font-family);
+  color: #ffffff;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+label {
+  position: relative;
+  color: #fff;
+}
+.activeAuthLink {
+  height: 27px;
+  text-decoration: none;
+  font-family: var(--font-family);
+  color: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  display: inline-block;
+  padding-right: 14px;
+  font-size: 18px;
+  font-weight: 500;
+
+  &:hover {
+    color: #ffffff;
+  }
+
+  &.active {
+    color: #ffffff;
+  }
+}

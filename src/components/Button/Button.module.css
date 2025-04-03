@@ -1,0 +1,95 @@
+.btn {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  color: var(--button-text-color);
+  height: 49px;
+  min-width: 272px;
+  width: 100%;
+  max-width: 335px;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  transition: background-color var(--transition-pattern),
+    color var(--transition-pattern);
+  .icon {
+    background-color: var(--button-text-color);
+    width: 28px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    svg {
+      width: 14px;
+      height: 14px;
+      stroke: var(--button-icon-color);
+    }
+  }
+}
+.btn_small {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  color: var(--button-text-color);
+  width: 40px;
+  height: 36px;
+  background-color: var(--small-btn-bgc);
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color var(--transition-pattern);
+  svg {
+    stroke: var(--small-btn-color);
+  }
+  &:hover {
+    background-color: var(--small-btn-bgc-hover);
+  }
+}
+.transparent {
+  background-color: transparent;
+  min-width: 287px;
+  max-width: 335px;
+  &:hover,
+  &:focus {
+    color: var(--text-color);
+    background-color: var(--button-text-color);
+  }
+  @media only screen and (min-width: 768px) {
+    width: 344px;
+
+  }
+}
+.primary {
+  background-color: var(--button-background-color);
+  &:hover,
+  &:focus {
+    background-color: var(--button-background-color-hoover);
+  }
+}
+.secondary {
+  color: var(--header-arrow-color);
+  background-color: var(--secondary-btn-bgc);
+  .icon {
+    svg {
+      stroke: var(--background-header);
+    }
+    background-color: var(--secondary-btn-icon-bgc);
+  }
+  &:hover,
+  &:focus {
+    color: var(--button-text-color);
+    background-color: var(--button-background-color);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .btn {
+    max-width: 352px;
+  }
+}

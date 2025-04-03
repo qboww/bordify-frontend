@@ -1,0 +1,47 @@
+.logo {
+  display: flex;
+  width: fit-content;
+  justify-content: start;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: -0.04em;
+  color: var(--logo-text-color);
+  .icon_box {
+    background-color: var(--logo-icon-bgc);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    svg {
+      fill: var(--logo-icon-fill);
+      width: 12px;
+      height: 16px;
+    }
+  }
+}
+.big_logo {
+  gap: 14px;
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--background-color);
+  @media only screen and (min-width: 768px) {
+    font-size: 40px;
+  }
+  .icon_box {
+    width: 40px;
+    height: 40px;
+    @media only screen and (min-width: 768px) {
+      width: 48px;
+      height: 48px;
+    }
+    svg {
+      width: 18px;
+      height: 24px;
+    }
+  }
+}
