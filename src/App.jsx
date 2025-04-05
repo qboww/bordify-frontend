@@ -1,3 +1,4 @@
+import 'typeface-roboto';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import { DashboardLayout, WelcomePage, NotFound, AuthPage } from './pages';

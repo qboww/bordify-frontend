@@ -26,8 +26,10 @@
 .span {
   color: var(--input-border);
   font-family: var(--font-family);
-  font-size: 12px;
+  font-size: 14px;
+  font-weight: 500;
 }
+
 .btn {
   all: unset;
 

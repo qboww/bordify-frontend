@@ -3,11 +3,11 @@
   padding-bottom: 8px;
   text-align: left;
 }
+
 .text {
   text-align: left;
   margin-bottom: 8px;
-  font-size: 12px;
-  letter-spacing: -0.24px;
+  font-size: 14px;
   opacity: 0.5;
 }
 
@@ -22,8 +22,6 @@
 }
 
 .title {
-  width: 76px;
-  height: 42px;
   font-weight: 500;
   letter-spacing: -0.28px;
   text-align: left;

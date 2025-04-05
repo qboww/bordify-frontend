@@ -10,7 +10,7 @@ export const Task = ({ task, columnid, boardid }) => {
     item => item.priorityLevel === priority
   );
 
-  const formattedDeadline = format(new Date(deadline), 'dd/MM/yyyy');
+  const formattedDeadline = format(new Date(deadline), 'dd.MM.yyyy');
   return (
     <li
       className={s.boardTaskBackground}
@@ -18,22 +18,21 @@ export const Task = ({ task, columnid, boardid }) => {
       style={{ borderColor: priorityColor.color }}
     >
       <ul className={s.boardTask}>
-        <li className={s.taskTitle}>{title}</li>
-        <li className={s.taskDescr}>{description}</li>
+        <li className={s.taskTitle}><p>{title}</p></li>
+        <li className={s.taskDescr}><p>{description}</p></li>
         <li className={s.taskInfo}>
-          <div>
-            Priority
-            <div className={s.priorityBox}>
+          <div className={s.priorityBox}>
+            <p>Priority</p>
+            <div className={s.priorityBoxText}>
               <span
                 style={{ backgroundColor: priorityColor.color }}
                 className={s.priorityCircle}
-              ></span>
+              />
               <span className={s.taskProps}>{priority}</span>
             </div>
           </div>
           <div className={s.deadlineBox}>
-            Deadline
-            {/* change for DatePicker */}
+            <p>Deadline</p>
             <span className={s.taskProps}>{formattedDeadline}</span>
           </div>
           <TaskControler

@@ -2,12 +2,12 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
-
   padding:  0 0 10px 24px  ;
   height: 100%;
   width: 100%;
 
 } 
+
 .nested_wrap{
   height: 100%;
   width: 100%;
@@ -34,35 +34,29 @@
 .board {
   display: flex;
   flex-wrap: nowrap;
-
   height: 100%;
   width: 100%;
   max-width: 100%;
 }
 
 .boardTitle {
-  padding: 10px 0;
-  text-align: left;
-  font-weight: 500;
-  font-size: 18px;
-  letter-spacing: -0.02em;
+  display: flex;
+  padding: 14px 0;
+
+  h2{
+    color: white;
+    font-size: 24px;
+    text-align: left;
+    font-weight: 600;
+    backdrop-filter: blur(30px);
+    padding: 16px;
+    display: inline-block;
+    border-radius: 8px;
+  }
 }
+
 .boardColumn {
   gap: 8px;
   display: flex;
   height: 95%;
-
-  /* overflow-y: hidden;
-  overflow-x: auto;
-  &::-webkit-scrollbar {
-    height: 12px;
-  }
-  &::-webkit-scrollbar-track {
-    background-color: var(--board-scroll-track);
-    border-radius: 12px;
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: var(--board-scroll-thumb);
-    border-radius: 12px;
-  } */
 }

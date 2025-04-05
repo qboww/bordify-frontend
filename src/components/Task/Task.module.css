@@ -1,87 +1,107 @@
 .boardTaskBackground {
   display: flex;
-  width: 334px;
+  max-width: 334px;
   width: 100%;
-  height: 154px;
   margin-right: 8px;
   border-radius: 5px;
   box-shadow: 0 0 5px #0000001a;
   overflow: hidden;
   border-left: 4px solid transparent;
 }
+
 .boardTask {
+  width: 100%;
   background: var(--secondary-btn-bgc);
   flex-direction: column;
-  align-items: left;
   align-items: flex-start;
-  /* margin-left: 4px; */
   padding: 14px 20px;
   font-family: var(--font-family);
   font-weight: 400;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 133%;
   letter-spacing: -0.02em;
   color: var(--task-main);
 }
+
 .priorityCircle {
-  display: flex;
-  height: 13px;
+  height: 12px;
   width: 12px;
   border-radius: 50%;
 }
 
 .taskTitle {
-  font-weight: 600;
-  font-size: 14px;
+  font-weight: 500;
+  font-size: 18px;
   line-height: 100%;
   color: var(--input-text-color);
-  margin-bottom: 8px;
-  height: 21px;
-  text-overflow: ellipsis;
+  margin-bottom: 14px;  
   overflow: hidden;
   white-space: nowrap;
 }
+
 .taskDescr {
-  line-height: 133%;
-  height: 38px;
-  text-overflow: ellipsis;
+  width: 100%;
   overflow: hidden;
-  white-space: nowrap;
+  text-align: left;
+
+  p{
+    letter-spacing: -0.02em;
+    font-size: 12px;
+    font-weight: 400;
+  }
 }
-.taskInfo {position: relative;
+
+.taskInfo {
+  position: relative;
   margin-top: 14px;
   padding-top: 14px;
   border-top: 1px solid var(--task-line);
-  font-size: 8px;
+  font-size: 12px;
   line-height: 100%;
   display: flex;
   width: 290px;
   gap: 14px;
-}
-.priorityBox {
-  display: flex;
-  gap: 4px;
-  margin-top: 4px;
   align-items: flex-end;
+}
+
+.priorityBoxText {
+  display: flex;
+  gap: 8px;
   text-transform: capitalize;
 }
+
+.priorityBox{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+  text-transform: capitalize;
+
+  p{
+    font-size: 12px;
+  }
+}
+
 .taskProps {
-  font-size: 10px;
+  font-size: 12px;
   line-height: 100%;
   color: var(--input-text-color);
   font-weight: 400;
+  text-align: left;
 }
+
 .deadlineBox {
   display: flex;
   flex-direction: column;
-  gap: 7px;
-}
-/* .taskActions {
-  margin-left: auto;
-  align-items: flex-end;
   gap: 8px;
-} */
-.task_controller{
+
+  p {
+    font-size: 12px;
+    text-align: left;
+  }
+}
+
+.task_controller {
   position: absolute;
   top: 50%;
   right: 5px;

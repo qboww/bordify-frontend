@@ -3,7 +3,7 @@
 @import 'react-datepicker/dist/react-datepicker.css';
 
 :root {
-  --font-family: 'Poppins', sans-serif;
+  /* --font-family: 'Poppins', sans-serif; */
   --text-color: #ffffff;
   --background-color: #232323;
   --button-background-color-hoover: #bedbb0;

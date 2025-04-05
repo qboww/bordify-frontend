@@ -4,11 +4,15 @@
   gap: 8px;
 }
 .taskIcon {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   stroke: var(--input-text-color);
   stroke-opacity: 0.5;
   fill: none;
+
+  svg{
+    min-width: 100%;
+  }
 }
 .btn_icon {
   background-color: transparent;

@@ -1,6 +1,5 @@
 .col_label {
   position: relative;
-  /* padding-right: 40px; */
   &:hover .right_side,
   &:focus .right_side {
     display: flex;
@@ -14,7 +13,7 @@
   background-color: var(--secondary-btn-bgc);
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 14px;
+  font-size: 18px;
   opacity: 1;
   margin: 0;
   height: 50px;

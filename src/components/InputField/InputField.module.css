@@ -9,7 +9,7 @@
 .input_field {
   box-sizing: border-box;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
   letter-spacing: -0.02em;
   margin: 0 auto;
   min-width: 272px;
@@ -23,18 +23,14 @@
   box-shadow: 0 4px 16px 0 var(--input-box-shadow);
   transition: color var(--transition-pattern),
     background-color var(--transition-pattern);
-  opacity: 0.5;
   position: relative;
   outline: none;
-  &:focus,
-  &:hover {
-    opacity: 1;
-  }
+
   &:disabled {
     background-color: var(--input-bgc);
     border-color: var(--input-border);
     color: var(--input-text-color);
-    opacity: 0.5;
+
     cursor: not-allowed;
     box-shadow: none;
   }
@@ -45,17 +41,12 @@
 }
 .textarea_container {
   height: 154px;
-  opacity: 0.5;
-  transition: opacity var(--transition-pattern);
 
-  &:focus-within {
-    opacity: 1;
-  }
 }
 .textarea_field {
   color: var(--input-text-color);
   width: 100%;
-
+  font-weight: 400;
   min-width: 287px;
   height: 100%;
   outline: none;
@@ -96,7 +87,7 @@
   margin-left: 4px;
 
   position: absolute;
-  bottom: -13px;
+  bottom: -16px;
   left: 0;
 }
 .input_field:-webkit-autofill,

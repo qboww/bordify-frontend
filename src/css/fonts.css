@@ -5,3 +5,11 @@
   src: local('Poppins Regular') url('./Poppins/Poppins-Regular.woff2')
     format('woff2');
 }
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: bold;
+  font-weight: bold;
+  src: local('Poppins Regular') url('./Poppins/Poppins-Bold.woff')
+    format('woff2');
+}

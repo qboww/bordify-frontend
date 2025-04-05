@@ -127,7 +127,7 @@ const EditModal = ({ onClose }) => {
         errors={errors}
         name="password"
       />
-      <Button buttonText="Send" type="submit" />
+      <Button buttonText="Save" type="submit" />
     </form>
   );
 };

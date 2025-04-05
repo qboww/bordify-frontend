@@ -5,16 +5,23 @@ export const selectOptions = [
   { value: 'violet', label: 'Violet' },
 ];
 export const customStyles = {
-  control: provided => ({
+  control: (provided, state) => ({
     ...provided,
     backgroundColor: 'var(--background-header)',
     color: 'var(--header-arrow-color)',
     border: 'none',
     outline: 'none',
+    boxShadow: 'none',
+    cursor: 'pointer',
+    pointerEvents: 'auto',
     '&:hover': {
       border: 'none',
       outline: 'none',
     },
+    '&:focus-within': { 
+      boxShadow: 'none',
+      border: 'none',
+    }
   }),
   menu: provided => ({
     ...provided,
@@ -30,16 +37,17 @@ export const customStyles = {
   singleValue: provided => ({
     ...provided,
     color: 'var(--header-arrow-color)',
+    cursor: 'pointer',
   }),
   option: (provided, state) => ({
     ...provided,
-
     border: 'none',
     backgroundColor: 'var(--background-header)',
     borderRadius: '8px',
     color: state.isSelected
       ? 'var(--button-background-color)'
       : 'var(--text-color)',
+    cursor: 'pointer',
     '&:hover': {
       color: 'var(--button-background-color-hoover)',
       '&:active': {
@@ -55,6 +63,7 @@ export const customStyles = {
     strokeOpacity: 0.8,
     transform: state.selectProps.menuIsOpen ? 'rotate(180deg)' : 'rotate(0deg)',
     transition: 'transform 0.2s ease',
+    cursor: 'pointer',
     '&:hover': {
       color: 'var(--text-color)',
     },
@@ -65,6 +74,11 @@ export const customStyles = {
   indicatorSeparator: provided => ({
     ...provided,
     display: 'none',
+  }),
+  input: (provided) => ({
+    ...provided,
+    opacity: 0,
+    pointerEvents: 'none',
   }),
 };
 

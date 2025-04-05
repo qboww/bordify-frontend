@@ -21,7 +21,7 @@ export const CardFormScheme = yup
     description: yup
       .string()
       .min(2, 'Description must be at least 2 characters long')
-      .max(64, 'Description must be at most 64 characters long')
+      .max(256, 'Description must be at most 256 characters long')
       .required('Description is required'),
     priority: yup.string(),
     deadline: yup.string(),

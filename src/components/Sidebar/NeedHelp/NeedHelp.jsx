@@ -20,13 +20,6 @@ import { useDispatch } from 'react-redux';
 const NeedHelp = () => {
   const isOpen = useSelector(selectNeedHelpModal);
   const dispatch = useDispatch();
-  // const toggleModal = () => {
-  //   if (isOpen) {
-  //     dispatch(closeModal());
-  //   } else {
-  //     dispatch(openModal());
-  //   }
-  // };
   const handleOpen = ()=>{
     dispatch(openNeedHelpModal())
   }

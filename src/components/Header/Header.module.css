@@ -13,9 +13,10 @@
     display: flex;
     gap: 14px;
     .user_info {
+      cursor: pointer;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 16px;
       .img_wrap {
         width: 32px;
         height: 32px;

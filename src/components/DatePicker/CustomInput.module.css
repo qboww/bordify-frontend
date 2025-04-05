@@ -4,18 +4,15 @@
 }
 .customInput {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: 0px;
   background-color: transparent;
   color: var(--button-background-color);
   border: none;
   border-bottom: 1px solid var(--white-40);
-  font-size: 18px;
-
+  font-size: 16px;
   cursor: pointer;
   width: 200px;
 }
 .div {
-  padding: 10px;
+  padding: 0px;
 }
