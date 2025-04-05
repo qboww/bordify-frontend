@@ -9,9 +9,6 @@ import { fetchBoardsThunk } from '../../redux/boards/boardsOperations';
 const ScreensPage = () => {
   const dispatch = useDispatch();
   const boards = useSelector(selectBoards);
-
-  console.log('Screens', boards);
-
   return (
     <div className={s.screen_page}>
       {boards.length > 0 ? <Board /> : <NoBoards />}

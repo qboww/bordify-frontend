@@ -8,7 +8,7 @@ const InputField = ({
   height,
   width,
   type = 'text',
-  placeholder = 'placeholder',
+  placeholder = 'Placeholder',
   register = () => {},
   name,
   errors,

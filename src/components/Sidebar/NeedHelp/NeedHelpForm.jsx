@@ -31,14 +31,15 @@ const NeedHelpForm = ({onClose}) => {
 <form
     className={s.need_help_form}
     onSubmit={handleSubmit(onSubmit)}
-    autoComplete="nope"
+    autoComplete="off"
   >
-      <InputField register={register} name="email" errors={errors} />
+      <InputField register={register} name="email" errors={errors} placeholder='Email'/>
       <InputField
         register={register}
         name="message"
         errors={errors}
         isTextArea
+        placeholder='Leave your question here...'
       />
       <Button buttonText="Save" type='submit'/>
     </form>

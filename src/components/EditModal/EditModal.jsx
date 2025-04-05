@@ -21,7 +21,6 @@ const EditModal = ({ onClose }) => {
   const dispatch = useDispatch();
   const userName = useSelector(selectUserName);
   const avatar = useSelector(selectAvatar);
-
   const email = useSelector(selectUserEmail);
 
   const [selectedAvatar, setSelectedAvatar] = useState(null);
@@ -35,6 +34,8 @@ const EditModal = ({ onClose }) => {
     defaultValues: {
       avatar: avatar,
       username: userName,
+      email: email, 
+      password: '', 
     },
     resolver: yupResolver(EditUserScheme),
     mode: 'onChange',
@@ -42,27 +43,35 @@ const EditModal = ({ onClose }) => {
 
   const onSubmit = data => {
     const formData = new FormData();
+    
     selectedAvatar && formData.append('avatar', selectedAvatar);
     formData.append('username', data.username);
-    dispatch(updateUserPreferencesThunk(formData));
+    
+    if (data.email && data.email !== email) {
+      formData.append('email', data.email);
+    }
+    
+    if (data.password) {
+      formData.append('password', data.password);
+    }
 
+    dispatch(updateUserPreferencesThunk(formData));
     onClose();
     reset();
   };
 
   const handleFileChange = event => {
     const file = event.currentTarget.files[0];
-
     if (file) {
       setSelectedAvatar(file);
     }
   };
+
   const inputFileRef = useRef(null);
   const handlePlusButtonClick = () => {
-    if (inputFileRef.current) {
-      inputFileRef.current.click();
-    }
+    inputFileRef.current?.click();
   };
+
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
@@ -117,15 +126,14 @@ const EditModal = ({ onClose }) => {
         type="email"
         name="email"
         placeholder="Enter your email"
-        value={email}
-        disabled
+        register={register} 
         errors={errors}
       />
       <InputPassword
-        disabled
-        defaultValue={userName}
-        errors={errors}
         name="password"
+        placeholder="Enter new password"
+        register={register} 
+        errors={errors}
       />
       <Button buttonText="Save" type="submit" />
     </form>

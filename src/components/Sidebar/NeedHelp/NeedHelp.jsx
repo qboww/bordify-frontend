@@ -65,7 +65,7 @@ const NeedHelp = () => {
 
       {isOpen &&
         createPortal(
-          <Modal title="Need help" isOpen={isOpen} closeModal={closeNeedHelpModal}>
+          <Modal title="Need Help?" isOpen={isOpen} closeModal={closeNeedHelpModal}>
             <NeedHelpForm onClose={()=>dispatch(closeNeedHelpModal())}/>
           </Modal>,
           document.body
