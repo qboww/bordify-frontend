@@ -1,11 +1,11 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { taskProApi } from '../../config/api';
+import { bordifyApi } from '../../config/api';
 //https://task-pro-backend-xdd4.onrender.com/api/boards/:boardId/columns/:columnId/tasks
 export const createNewTaskThunk = createAsyncThunk(
   'tasks/createTask',
   async ({boardid, columnid, task}, thunkAPI) => {
     try {
-      const { data } = await taskProApi.post(
+      const { data } = await bordifyApi.post(
         `api/boards/${boardid}/columns/${columnid}/tasks`,
         task
       );
@@ -23,7 +23,7 @@ export const updateTaskThunk = createAsyncThunk(
     const { boardid, columnid, taskid, body } = data;
 
     try {
-      const { data } = await taskProApi.patch(
+      const { data } = await bordifyApi.patch(
         `api/boards/${boardid}/columns/${columnid}/tasks/${taskid}`,
         body
       );
@@ -41,7 +41,7 @@ export const deleteTaskThunk = createAsyncThunk(
   async (data, thunkAPI) => {
 
     try {
-      await taskProApi.delete(
+      await bordifyApi.delete(
         `api/boards/${data.boardid}/columns/${data.columnid}/tasks/${data.taskid}`
       );
       return data.taskid;

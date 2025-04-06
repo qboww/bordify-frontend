@@ -1,15 +1,15 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { taskProApi } from '../../config/api';
-import { taskProApiUnAutorized } from '../../config/api';
+import { bordifyApi } from '../../config/api';
+import { bordifyApiUnAutorized } from '../../config/api';
 
 export const setToken = accessToken => {
-  taskProApi.defaults.headers.common.Authorization = `Bearer ${accessToken}`;
+  bordifyApi.defaults.headers.common.Authorization = `Bearer ${accessToken}`;
 };
 export const clearToken = () => {
-  taskProApi.defaults.headers.common.Authorization = ``;
+  bordifyApi.defaults.headers.common.Authorization = ``;
 };
 export const setTokenOnLogin = accessToken => {
-  taskProApiUnAutorized.defaults.headers.common.Authorization = `Bearer ${accessToken}`;
+  bordifyApiUnAutorized.defaults.headers.common.Authorization = `Bearer ${accessToken}`;
 };
 
 export const registerThunk = createAsyncThunk(
@@ -17,7 +17,7 @@ export const registerThunk = createAsyncThunk(
   async (credentials, thunkApi) => {
     try {
       console.log('Sending registration request with:', credentials); 
-      const { data } = await taskProApiUnAutorized.post(
+      const { data } = await bordifyApiUnAutorized.post(
         'api/auth/register',
         credentials
       );
@@ -34,7 +34,7 @@ export const loginThunk = createAsyncThunk(
   'auth/login',
   async (credentials, thunkApi) => {
     try {
-      const { data } = await taskProApiUnAutorized.post(
+      const { data } = await bordifyApiUnAutorized.post(
         'api/auth/login',
         credentials
       );
@@ -51,7 +51,7 @@ export const logoutThunk = createAsyncThunk(
   'auth/logout',
   async (_, thunkApi) => {
     try {
-      await taskProApi.post('api/auth/logout');
+      await bordifyApi.post('api/auth/logout');
       clearToken();
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);
@@ -67,7 +67,7 @@ export const refreshTokensThunk = createAsyncThunk(
     if (refreshToken && sid) {
       try {
         setToken(refreshToken);
-        const { data } = await taskProApi.post('api/auth/refresh', {
+        const { data } = await bordifyApi.post('api/auth/refresh', {
           sid,
         });
         return data;
@@ -94,7 +94,7 @@ export const refreshUserThunk = createAsyncThunk(
       return thunkAPI.rejectWithValue('Unable to fetch user');
     }
     try {
-      const { data } = await taskProApi.get('api/auth/current');
+      const { data } = await bordifyApi.get('api/auth/current');
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -106,7 +106,7 @@ export const updateUserPreferencesThunk = createAsyncThunk(
   'auth/updateUserPreferences',
   async (preferences, thunkAPI) => {
     try {
-      const { data } = await taskProApi.patch('api/auth/update', preferences, {
+      const { data } = await bordifyApi.patch('api/auth/update', preferences, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -122,7 +122,7 @@ export const resendVerificationEmailThunk = createAsyncThunk(
   'auth/resendVerificationEmail',
   async (body, thunkAPI) => {
     try {
-      const { data } = await taskProApi.post('api/auth/verify', {
+      const { data } = await bordifyApi.post('api/auth/verify', {
         email: body,
       });
       return data.data;

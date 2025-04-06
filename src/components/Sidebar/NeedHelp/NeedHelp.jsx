@@ -51,7 +51,7 @@ const NeedHelp = () => {
       <div className={s.wrapper}>
         <p className={s.text}>
           If you need help with <br />
-          <span className={s.span}>TaskPro</span>, check out our support
+          <span className={s.span}>Bordify</span>, check out our support
           resources or reach out to our customer support team.
         </p>
 

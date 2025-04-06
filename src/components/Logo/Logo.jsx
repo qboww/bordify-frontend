@@ -14,7 +14,7 @@ const Logo = ({ big = false, className }) => {
           <use href={`${icons}#icon-Logo-task-Pro`}></use>
         </svg>
       </div>
-      <span>Task Pro</span>
+      <span>Bordify</span>
     </div>
   );
 };

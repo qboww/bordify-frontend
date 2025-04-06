@@ -28,12 +28,12 @@ export const Task = ({ task, columnid, boardid }) => {
                 style={{ backgroundColor: priorityColor.color }}
                 className={s.priorityCircle}
               />
-              <span className={s.taskProps}>{priority}</span>
+              <span className={s.bordifyps}>{priority}</span>
             </div>
           </div>
           <div className={s.deadlineBox}>
             <p>Deadline</p>
-            <span className={s.taskProps}>{formattedDeadline}</span>
+            <span className={s.bordifyps}>{formattedDeadline}</span>
           </div>
           <TaskControler
             columnid={columnid}

@@ -1,11 +1,11 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { taskProApi } from '../../config/api';
+import { bordifyApi } from '../../config/api';
 
 export const fetchBoardsThunk = createAsyncThunk(
   'boards/fetchBoards',
   async (_, thunkAPI) => {
     try {
-      const { data } = await taskProApi.get('api/boards');
+      const { data } = await bordifyApi.get('api/boards');
 
       return data;
     } catch (error) {
@@ -18,7 +18,7 @@ export const createBoardThunk = createAsyncThunk(
   'boards/createBoard',
   async (boardData, thunkAPI) => {
     try {
-      const { data } = await taskProApi.post('api/boards', boardData);
+      const { data } = await bordifyApi.post('api/boards', boardData);
 
       return data;
     } catch (error) {
@@ -31,7 +31,7 @@ export const updateBoardThunk = createAsyncThunk(
   async (board, thunkAPI) => {
     const { _id, ...body } = board;
     try {
-      const { data } = await taskProApi.patch(`api/boards/${_id}`, body);
+      const { data } = await bordifyApi.patch(`api/boards/${_id}`, body);
       console.log(data);
       return data;
     } catch (error) {
@@ -43,7 +43,7 @@ export const deleteBoardThunk = createAsyncThunk(
   'boards/deleteBoard',
   async (boardId, thunkAPI) => {
     try {
-      await taskProApi.delete(`api/boards/${boardId}`);
+      await bordifyApi.delete(`api/boards/${boardId}`);
       return boardId;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -55,7 +55,7 @@ export const deleteBoardThunk = createAsyncThunk(
 //   'backgrounds',
 //   async (_, thunkAPI) => {
 //     try {
-//       const { data } = await taskProApi.get('/api/backgrounds');
+//       const { data } = await bordifyApi.get('/api/backgrounds');
 //       return data;
 //     } catch (error) {
 //       return thunkAPI.rejectWithValue(error.message);
@@ -67,7 +67,7 @@ export const deleteBoardThunk = createAsyncThunk(
 //   'boards/changeBackground',
 //   async ({ id, currentBg }, thunkAPI) => {
 //     try {
-//       const { data } = await taskProApi.patch(`/api/boards/${id}/currentBg`, {
+//       const { data } = await bordifyApi.patch(`/api/boards/${id}/currentBg`, {
 //         currentBg,
 //       });
 //       return data;
@@ -81,7 +81,7 @@ export const fetchBoardByIdThunk = createAsyncThunk(
   'board/fetchBoardById',
   async (boardId, thunkAPI) => {
     try {
-      const { data } = await taskProApi.get(`api/boards/${boardId}`);
+      const { data } = await bordifyApi.get(`api/boards/${boardId}`);
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

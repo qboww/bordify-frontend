@@ -8,5 +8,5 @@ export default defineConfig({
   build: {
     sourcemap: true,
   },
-  base: "/taskpro"
+  base: "/bordify"
 });

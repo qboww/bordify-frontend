@@ -1,19 +1,19 @@
 import axios from 'axios';
-export const taskProApiUnAutorized = axios.create({
+export const bordifyApiUnAutorized = axios.create({
   baseURL: 'http://localhost:3000/',
   headers: {
     'Content-Type': 'application/json',
   },
 });
 
-export const taskProApi = axios.create({
+export const bordifyApi = axios.create({
   baseURL: 'http://localhost:3000/',
   headers: {
     'Content-Type': 'application/json',
   },
 });
 
-export const taskProApiFormData = axios.create({
+export const bordifyApiFormData = axios.create({
   baseURL: 'http://localhost:3000/',
   headers: {
     'Content-Type': 'multipart/form-data',

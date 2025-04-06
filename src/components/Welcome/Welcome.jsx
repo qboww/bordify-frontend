@@ -39,13 +39,6 @@ const Welcome = () => {
       </picture>
 
       <Logo big />
-      {/* <div className={css.logo}>
-        <span>
-          <Lightning width={15} height={20} fillColor={'#fff'} />
-        </span>
-        <h1>Task Pro</h1>
-      </div> */}
-
       <p className={css.info}>
         Supercharge your productivity and take control of your tasks with Task
         Pro - Don't wait, start achieving your goals now!

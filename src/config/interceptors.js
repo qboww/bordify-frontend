@@ -1,8 +1,8 @@
 import { store } from '../redux/store';
 import { refreshTokensThunk } from '../redux/user/userOperations';
-import { taskProApi, taskProApiFormData } from './api';
+import { bordifyApi, bordifyApiFormData } from './api';
 
-taskProApi.interceptors.response.use(
+bordifyApi.interceptors.response.use(
   response => response,
   async error => {
     const { status } = error.response || {};
@@ -14,7 +14,7 @@ taskProApi.interceptors.response.use(
         // Retry the original request after refreshing the token
         const retryOriginalRequest = new Promise((resolve, reject) => {
           const originalRequest = error.config;
-          taskProApi(originalRequest).then(resolve).catch(reject);
+          bordifyApi(originalRequest).then(resolve).catch(reject);
         });
 
         return retryOriginalRequest;
@@ -27,7 +27,7 @@ taskProApi.interceptors.response.use(
     return Promise.reject(error);
   }
 );
-taskProApiFormData.interceptors.response.use(
+bordifyApiFormData.interceptors.response.use(
   response => response,
   async error => {
     const { status } = error.response || {};
@@ -39,7 +39,7 @@ taskProApiFormData.interceptors.response.use(
         // Retry the original request after refreshing the token
         const retryOriginalRequest = new Promise((resolve, reject) => {
           const originalRequest = error.config;
-          taskProApi(originalRequest).then(resolve).catch(reject);
+          bordifyApi(originalRequest).then(resolve).catch(reject);
         });
 
         return retryOriginalRequest;
