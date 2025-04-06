@@ -13,6 +13,7 @@
 
 .create {
   display: flex;
+  gap: 8px;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid var(--border-sidebar);
@@ -25,4 +26,5 @@
   font-weight: 500;
   letter-spacing: -0.28px;
   text-align: left;
+  flex-wrap: wrap;
 }

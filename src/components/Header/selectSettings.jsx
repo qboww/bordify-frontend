@@ -2,7 +2,7 @@ import { components } from 'react-select';
 export const selectOptions = [
   { value: 'light', label: 'Light' },
   { value: 'dark', label: 'Dark' },
-  { value: 'violet', label: 'Violet' },
+  { value: 'cyan', label: 'Cyan' },
 ];
 export const customStyles = {
   control: (provided, state) => ({

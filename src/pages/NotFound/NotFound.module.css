@@ -6,31 +6,25 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 70px;
+  gap: 40px;
 }
 
-@media only screen and (min-width: 768px) {
-  .container {
-    gap: 20px;
-  }
+.textContainer {
+  text-align: center;
 }
 
-@media only screen and (min-width: 768px) {
-  .thumb {
-    width: 550px;
-  }
+.title {
+  font-size: 120px;
+  font-weight: 700;
+  color: #161616;
+  margin: 0;
+  line-height: 1;
 }
 
-@media only screen and (min-width: 1440px) {
-  .thumb {
-    width: 800px;
-  }
-}
-
-.img {
-  width: 800px;
-  height: 100%;
-  mix-blend-mode: multiply;
+.message {
+  font-size: 24px;
+  color: #161616;
+  margin: 0;
 }
 
 .button {
@@ -41,6 +35,12 @@
   font-family: var(--font-family);
   width: 280px;
   height: 49px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #2a2a2a;
 }
 
 @media only screen and (min-width: 375px) {
@@ -48,8 +48,31 @@
     width: 335px;
   }
 }
+
 @media only screen and (min-width: 768px) {
+  .container {
+    gap: 60px;
+  }
+  
+  .title {
+    font-size: 160px;
+  }
+  
+  .message {
+    font-size: 32px;
+  }
+  
   .button {
     width: 344px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .title {
+    font-size: 200px;
+  }
+  
+  .message {
+    font-size: 40px;
   }
 }

@@ -9,7 +9,7 @@
   letter-spacing: -0.04em;
   color: var(--logo-text-color);
   .icon_box {
-    background-color: var(--logo-icon-bgc);
+    background-color: var(--need-help-bgc);
     border-radius: 8px;
     display: flex;
     justify-content: center;
@@ -19,7 +19,7 @@
     overflow: hidden;
     svg {
       fill: var(--logo-icon-fill);
-      width: 12px;
+      width: 16px;
       height: 16px;
     }
   }

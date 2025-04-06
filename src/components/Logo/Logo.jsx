@@ -11,7 +11,7 @@ const Logo = ({ big = false, className }) => {
     >
       <div className={s.icon_box}>
         <svg>
-          <use href={`${icons}#icon-Logo-task-Pro`}></use>
+          <use href={`${icons}#icon-Logo-boardify`}></use>
         </svg>
       </div>
       <span>Bordify</span>

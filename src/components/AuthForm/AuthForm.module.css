@@ -1,38 +1,3 @@
-/* .background {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 0px;
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(180deg, #ffffff 25%, #bedbb0 92.19%);
-}
-
-.formWrapper {
-  border-radius: 8px;
-  padding: 24px;
-  min-width: 320px;
-  max-width: 335px;
-  margin: 0 auto;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  background-color: #151515;
-  @media only screen and (min-width: 768px) {
-    padding: 40px;
-    width: 100%;
-
-    max-width: 424px;
-  }
-} */
-/* .authNav {
-  display: flex;
-  gap: 14px;
-   margin: 40px 0 0 40px; 
-} */
-
 .formStyle {
   width: 100%;
   display: flex;

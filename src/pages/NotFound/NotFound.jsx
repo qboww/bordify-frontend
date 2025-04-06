@@ -1,7 +1,4 @@
 import { useNavigate } from 'react-router-dom';
-
-import img from '../../assets/images/notFound/oops.webp';
-
 import css from './NotFound.module.css';
 
 export const NotFound = () => {
@@ -9,8 +6,9 @@ export const NotFound = () => {
 
   return (
     <div className={css.container}>
-      <div className={css.thumb}>
-        <img className={css.img} src={img} alt="page not found" />
+      <div className={css.textContainer}>
+        <h1 className={css.title}>404</h1>
+        <p className={css.message}>Oops! Page not found</p>
       </div>
       <button
         className={css.button}
@@ -22,4 +20,5 @@ export const NotFound = () => {
     </div>
   );
 };
+
 export default NotFound;
