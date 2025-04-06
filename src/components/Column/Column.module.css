@@ -23,8 +23,7 @@
   gap: 8px;
   height: 100%;
   overflow-x: hidden;
-  overflow-y: auto;
-  margin-bottom: 10px;
+  overflow-y: hidden;
   &::-webkit-scrollbar {
     width: 12px;
   }
