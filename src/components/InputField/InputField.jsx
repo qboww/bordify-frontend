@@ -44,7 +44,6 @@ const InputField = ({
     <label className={clsx(s.input_label, classNameLabel)}>
       <input
         value={value}
-        // defaultValue={defaultValue}
         autoComplete={autoComplete}
         disabled={disabled}
         className={clsx(s.input_field, className)}

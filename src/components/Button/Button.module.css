@@ -36,8 +36,8 @@
   border: 1px solid transparent;
   cursor: pointer;
   color: var(--button-text-color);
-  width: 40px;
-  height: 36px;
+  width: 36px;
+  height: 32px;
   background-color: var(--small-btn-bgc);
   font-weight: 500;
   display: flex;

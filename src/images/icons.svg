@@ -121,10 +121,6 @@
       <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.8235"
         d="M7.529 12.235l7.529 7.529 7.529-7.529"></path>
     </symbol>
-    <!-- <symbol id="icon-eye" viewBox="0 0 32 32">
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.3111" d="M1.333 16c0 0 5.333-10.667 14.667-10.667s14.667 10.667 14.667 10.667c0 0-5.333 10.667-14.667 10.667s-14.667-10.667-14.667-10.667z"></path>
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.3111" d="M16 20c2.209 0 4-1.791 4-4s-1.791-4-4-4c-2.209 0-4 1.791-4 4s1.791 4 4 4z"></path>
-</symbol> -->
     <symbol id="icon-x-close" viewBox="0 0 32 32">
       <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M24 8l-16 16">
       </path>
@@ -137,14 +133,9 @@
       <path fill="none" stroke="#fff" style="stroke: var(--color1, #fff)" stroke-linejoin="round" stroke-linecap="round"
         stroke-miterlimit="4" stroke-width="2.6667" d="M8 8l16 16"></path>
     </symbol>
-    <symbol id="icon-logout" viewBox="0 0 32 32">
-      <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.5"
-        d="M11.867 10.080c0.413-4.8 2.88-6.76 8.28-6.76h0.173c5.96 0 8.347 2.387 8.347 8.347v8.693c0 5.96-2.387 8.347-8.347 8.347h-0.173c-5.36 0-7.827-1.933-8.267-6.653">
-      </path>
-      <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.5"
-        d="M2.667 16h17.173"></path>
-      <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.5"
-        d="M16.867 11.533l4.467 4.467-4.467 4.467"></path>
+    <symbol id="icon-logout" viewBox="0 0 25 25">
+      <path d="M15 3H7C5.89543 3 5 3.89543 5 5V19C5 20.1046 5.89543 21 7 21H15" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="2"></path>
+        <path d="M19 12L15 8M19 12L15 16M19 12H9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
     </symbol>
     <symbol id="icon-help" viewBox="0 0 32 32">
       <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.88"

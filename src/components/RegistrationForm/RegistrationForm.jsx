@@ -2,7 +2,6 @@ import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import { RegistrationSchame } from '../../schemas/AuthSchemas';
 import css from './RegistrationForm.module.css';
-// import Loader from '../Loader/Loader';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -15,7 +14,7 @@ import { selectIsLoading } from '../../redux/user/userSelectors';
 import Loader from '../Loader/Loader';
 
 const RegistrationForm = () => {
-  const dispatch = useDispatch(); // from redux
+  const dispatch = useDispatch();
 
   const isLoading = useSelector(selectIsLoading);
   const {
@@ -105,7 +104,7 @@ const RegistrationForm = () => {
           <Button
             className={css.buttonStyles}
             type="submit"
-            buttonText="Register Now"
+            buttonText="Register"
           />
         </form>
       </div>

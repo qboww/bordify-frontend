@@ -129,7 +129,7 @@ const AuthForm = ({
           className={css.buttonStyles}
           type="submit"
           disabled={!isValid}
-          buttonText={registerForm ? 'Register Now' : 'Log In Now'}
+          buttonText={registerForm ? 'Register' : 'Log in'}
         />
       </form>
     </>

@@ -60,6 +60,7 @@ export const customStyles = {
   dropdownIndicator: (provided, state) => ({
     ...provided,
     color: 'var(--header-arrow-color)',
+    padding: 0,
     strokeOpacity: 0.8,
     transform: state.selectProps.menuIsOpen ? 'rotate(180deg)' : 'rotate(0deg)',
     transition: 'transform 0.2s ease',

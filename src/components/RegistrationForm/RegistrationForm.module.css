@@ -10,7 +10,8 @@
     135deg,
     rgba(227, 242, 253, 0.9) 0%,
     rgba(187, 222, 251, 0.9) 100%
-  );}
+  );
+}
 
 .formWrapper {
   border-radius: 5px;
@@ -23,6 +24,7 @@
   flex-direction: column;
   gap: 40px;
   background-color: #151515;
+  
   @media only screen and (min-width: 768px) {
     padding: 40px;
     width: 100%;
