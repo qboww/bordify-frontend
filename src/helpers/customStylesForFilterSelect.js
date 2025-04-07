@@ -1,12 +1,12 @@
 const customStyles = {
   control: () => ({
-    width: '64px',
-    height: '20px',
+    width: '88px',
+    height: '36px',
     backgroundColor: 'transparent',
     cursor: 'pointer',
     position: 'absolute',
-    top: '12px',
-    right: '24px',
+    top: '22px',
+    right: '26px',
   }),
   indicatorsContainer: () => ({
     display: 'none',
@@ -24,8 +24,8 @@ const customStyles = {
     height: '234px',
     padding: '24px',
     position: 'absolute',
-    top: '58px',
-    right: '20px',
+    top: '68px',
+    right: '24px',
     zIndex: '120',
   }),
   menuList: () => ({

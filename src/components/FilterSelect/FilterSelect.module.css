@@ -1,7 +1,7 @@
 
 .container {
   position: absolute;
-  top: 82px;
+  top: 78px;
   right: 24px;
   display: flex;
   align-items: center;
@@ -10,7 +10,7 @@
   cursor: pointer;
   color: var(--text-color);
   backdrop-filter: blur(40px);
-  border: 1px solid var(--small-btn-bgc);
+  border: 2px solid var(--small-btn-bgc);
   padding: 8px;
   border-radius: 5px;
 }

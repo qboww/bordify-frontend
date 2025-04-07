@@ -20,10 +20,11 @@ const FilterSelect = () => {
   return (
     <>
       <div className={css.container}>
+      <span className={css.text}>Filters</span>
+      
         <svg className={css.icon_filter}>
           <use href={`${svg}#icon-filter-1`}></use>
         </svg>
-        <span className={css.text}>Filters</span>
       </div>
       <Select
         options={options}
