@@ -13,7 +13,7 @@ const CustomOption = props => {
             height: '20px',
             position: 'relative',
             marginRight: '8px',
-            borderRadius: '50%',
+            borderRadius: '3px',
             border: isSelected ? `1px solid ${props.data.color}` : 'none',
             overflow: 'hidden',
           }}
@@ -22,7 +22,7 @@ const CustomOption = props => {
             style={{
               width: '14px',
               height: '14px',
-              borderRadius: '50%',
+              borderRadius: '3px',
               backgroundColor: props.data.color,
               position: 'absolute',
               top: '50%',

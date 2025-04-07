@@ -18,7 +18,7 @@
   padding: 14px 18px;
   background-color: var(--input-bgc);
   border: 1px solid var(--input-border);
-  border-radius: 8px;
+  border-radius: 5px;
   color: var(--input-text-color);
   box-shadow: 0 4px 16px 0 var(--input-box-shadow);
   transition: color var(--transition-pattern),
@@ -54,7 +54,7 @@
   background-color: transparent;
   resize: none;
   scroll-behavior: smooth;
-  border-radius: 8px;
+  border-radius: 5px;
   transition: color var(--transition-pattern),
     background-color var(--transition-pattern);
   &:focus .input_field,
@@ -73,7 +73,7 @@
   &::-webkit-scrollbar-thumb {
     height: 10px;
     background-color: var(--button-background-color);
-    border-radius: 8px;
+    border-radius: 5px;
     transition: background-color var(--transition-pattern);
   }
 

@@ -52,7 +52,7 @@
     backdrop-filter: blur(30px);
     padding: 16px;
     display: inline-block;
-    border-radius: 8px;
+    border-radius: 5px;
     border: 1px solid var(--small-btn-bgc);
   }
 }

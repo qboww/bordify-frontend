@@ -6,8 +6,11 @@
   padding: 20px 16px;
   margin: 0px auto;
   height: 100vh;
-  background: linear-gradient(180deg, #ffffff 25%, #bedbb0 92.19%);
-
+  background: linear-gradient(
+    135deg,
+    rgba(227, 242, 253, 0.9) 0%,
+    rgba(187, 222, 251, 0.9) 100%
+  );
   img {
     margin-bottom: 14px;
 
@@ -68,7 +71,7 @@
     justify-content: center;
     width: 40px;
     height: 40px;
-    border-radius: 8px;
+    border-radius: 5px;
     background-color: #161616;
 
     @media screen and (min-width: 768px) {
@@ -97,7 +100,7 @@
 
 /* .authLink {
   margin: 0, auto;
-  border-radius: 8px;
+  border-radius: 5px;
   width: 335px;
   height: 49px;
   padding: 0px 0px;

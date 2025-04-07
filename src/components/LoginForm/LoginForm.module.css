@@ -6,11 +6,14 @@
   margin: 0px;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(180deg, #ffffff 25%, #bedbb0 92.19%);
-}
+  background: linear-gradient(
+    135deg,
+    rgba(227, 242, 253, 0.9) 0%,
+    rgba(187, 222, 251, 0.9) 100%
+  );}
 
 .formWrapper {
-  border-radius: 8px;
+  border-radius: 5px;
   padding: 24px;
   min-width: 320px;
   max-width: 335px;
@@ -28,8 +31,8 @@
 }
 .authNav {
   display: flex;
+  flex-direction: column;
   gap: 14px;
-  /* margin: 40px 0 0 40px; */
 }
 
 .formStyle {
@@ -53,7 +56,7 @@
   padding: 0px 0px 0px 18px;
   background-color: #151515 !important;
   border: 1px solid rgb(190, 219, 176);
-  border-radius: 8px;
+  border-radius: 5px;
   color: rgb(255, 255, 255);
 
   opacity: 0.5;
@@ -144,7 +147,7 @@
   padding: 14px 0;
   font-weight: 500;
   background: #bedbb0;
-  border-radius: 8px;
+  border-radius: 5px;
   color: #161616;
 
   &:hover {

@@ -8,7 +8,7 @@ import { Button } from '../../Button/Button';
 import IconsList from './IconsList/IconsList';
 import BgcList from './BgcList/BgcList';
 import { useEffect, useState } from 'react';
-import { BoardFormScheme } from '../../../schames/BoardFormSchemes';
+import { BoardFormScheme } from '../../../schemas/BoardFormSchemas';
 import {
   createBoardThunk,
   updateBoardThunk,

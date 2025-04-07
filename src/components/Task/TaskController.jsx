@@ -1,4 +1,4 @@
-import s from './TaskControler.module.css';
+import s from './TaskController.module.css';
 import icons from '../../images/icons.svg';
 import { useParams } from 'react-router-dom';
 import { useState } from 'react';
@@ -11,7 +11,7 @@ import ModalWithoutRedux from '../ModalWithoutRedux/ModalWithoutRedux';
 import CardForm from '../CardForm/CardForm';
 import { clsx } from 'clsx';
 import WarningDedline from '../WarningDedline/WarningDedline';
-export const TaskControler = ({
+export const TaskController = ({
   taskid,
   columnid,
   boardid,

@@ -32,7 +32,7 @@ const CustomMenu = props => {
       <div className={css.menuHeader}>
         <div className={css.filtersTitle}>Filters</div>
         <div className={css.separator}></div>
-        <div className={css.labelTitle}>Label color</div>
+        <div className={css.labelTitle}>Priority label</div>
       </div>
       {props.children}
       <div className={css.selectAllContainer}>

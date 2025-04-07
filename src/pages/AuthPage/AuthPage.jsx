@@ -1,6 +1,6 @@
 import { NavLink, useParams } from 'react-router-dom';
 import AuthForm from '../../components/AuthForm/AuthForm';
-import { LoginSchame, RegistrationSchame } from '../../schames/AuthSchames';
+import { LoginSchame, RegistrationSchame } from '../../schemas/AuthSchemas';
 import { loginThunk, registerThunk } from '../../redux/user/userOperations';
 import css from './AuthPage.module.css';
 import DocumentTitle from '../../components/Title/Title';

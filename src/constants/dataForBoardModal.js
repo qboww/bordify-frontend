@@ -76,8 +76,8 @@ export const icons = [
 ];
 
 export const priorities = [
-  { priorityLevel: 'low', color: '#8fa1d0' },
-  { priorityLevel: 'medium', color: '#e09cb5' },
-  { priorityLevel: 'high', color: '#bedbb0' },
+  { priorityLevel: 'low', color: '#A1E887' },
+  { priorityLevel: 'medium', color: '#FFA364' },
+  { priorityLevel: 'high', color: '#f44336' },
   { priorityLevel: 'none', color: 'rgba(255, 255, 255, 0.3)' },
 ];

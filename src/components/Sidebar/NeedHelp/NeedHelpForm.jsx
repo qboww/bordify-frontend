@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 import { selectUserEmail } from '../../../redux/user/userSelectors';
 import { useDispatch } from 'react-redux';
 import { contactSupportThunk } from '../../../redux/support/supportOperations';
-import { NeedHelpFormScheme } from '../../../schames/AuthSchames';
+import { NeedHelpFormScheme } from '../../../schemas/AuthSchemas';
 const NeedHelpForm = ({onClose}) => {
   const dispatch = useDispatch()
   const email = useSelector(selectUserEmail);

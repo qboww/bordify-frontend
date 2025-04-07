@@ -52,7 +52,7 @@
     letter-spacing: -0.02em;
     color: var(--text-color);
   }
-  border-radius: 8px;
+  border-radius: 5px;
   position: relative;
   padding: 24px;
   /* overflow: hidden; */

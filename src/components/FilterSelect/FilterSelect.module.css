@@ -12,7 +12,7 @@
   backdrop-filter: blur(40px);
   border: 1px solid var(--small-btn-bgc);
   padding: 8px;
-  border-radius: 8px;
+  border-radius: 5px;
 }
 
 .icon_close_wrapper {

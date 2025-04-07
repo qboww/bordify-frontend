@@ -10,7 +10,7 @@
   color: var(--logo-text-color);
   .icon_box {
     background-color: var(--need-help-bgc);
-    border-radius: 8px;
+    border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;

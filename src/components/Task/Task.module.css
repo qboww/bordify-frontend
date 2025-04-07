@@ -23,10 +23,10 @@
   color: var(--task-main);
 }
 
-.priorityCircle {
+.prioritySquare {
   height: 12px;
   width: 12px;
-  border-radius: 50%;
+  border-radius: 3px;
 }
 
 .taskTitle {
@@ -35,7 +35,6 @@
   line-height: 100%;
   color: var(--input-text-color);
   margin-bottom: 14px;  
-  overflow: hidden;
   white-space: nowrap;
 }
 

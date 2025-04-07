@@ -21,7 +21,7 @@
       .img_wrap {
         width: 32px;
         height: 32px;
-        border-radius: 8px;
+        border-radius: 5px;
         overflow: hidden;
         img {
           width: 100%;
@@ -36,7 +36,7 @@
         align-items: end;
         width: 32px;
         height: 32px;
-        border-radius: 8px;
+        border-radius: 5px;
         overflow: hidden;
         background-color: var(--user-icon-bgc);
         div {

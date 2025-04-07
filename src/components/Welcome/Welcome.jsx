@@ -40,8 +40,7 @@ const Welcome = () => {
 
       <Logo big />
       <p className={css.info}>
-        Supercharge your productivity and take control of your tasks with Task
-        Pro - Don't wait, start achieving your goals now!
+      Your goals deserve the best chance - give them Boardify. Turn overwhelming lists into satisfying checkmarks, one organized board at a time!
       </p>
 
       <div className={css.authNav}>

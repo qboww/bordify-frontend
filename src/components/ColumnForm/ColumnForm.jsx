@@ -6,7 +6,7 @@ import icon from '../../images/icons.svg';
 
 import InputField from '../InputField/InputField';
 import { Button } from '../Button/Button';
-import { ColumnFormScheme } from '../../schames/BoardFormSchemes';
+import { ColumnFormScheme } from '../../schemas/BoardFormSchemas';
 import {
   createNewColumnThunk,
   updateColumnThunk,

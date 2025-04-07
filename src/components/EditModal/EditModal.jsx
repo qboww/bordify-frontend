@@ -14,7 +14,7 @@ import {
   selectUserName,
 } from '../../redux/user/userSelectors';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { EditUserScheme } from '../../schames/AuthSchames';
+import { EditUserScheme } from '../../schemas/AuthSchemas';
 import SvgIconAnonym from '../Header/SvgIconAnonym';
 
 const EditModal = ({ onClose }) => {

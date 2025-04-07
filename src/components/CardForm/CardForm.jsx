@@ -14,7 +14,7 @@ import InputField from '../InputField/InputField';
 import { Button } from '../Button/Button';
 import PriorityList from './PriorityList/PriorityList';
 import { priorities } from '../../constants/dataForBoardModal';
-import { CardFormScheme } from '../../schames/BoardFormSchemes';
+import { CardFormScheme } from '../../schemas/BoardFormSchemas';
 import { format } from 'date-fns';
 
 const CardForm = ({
@@ -116,7 +116,7 @@ const CardForm = ({
       </div>
       <div className={s.bottom_inputs}>
         <section>
-          <h2>Label color</h2>
+          <h2>Priority</h2>
           <PriorityList
             selectedPriority={selectedPriority}
             setSelectedPriority={setSelectedPriority}

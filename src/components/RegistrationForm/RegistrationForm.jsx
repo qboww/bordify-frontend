@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
-import { RegistrationSchame } from '../../schames/AuthSchames';
+import { RegistrationSchame } from '../../schemas/AuthSchemas';
 import css from './RegistrationForm.module.css';
 // import Loader from '../Loader/Loader';
 import { yupResolver } from '@hookform/resolvers/yup';

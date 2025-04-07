@@ -6,11 +6,14 @@
   margin: 0px;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(180deg, #ffffff 25%, #bedbb0 92.19%);
-}
+  background: linear-gradient(
+    135deg,
+    rgba(227, 242, 253, 0.9) 0%,
+    rgba(187, 222, 251, 0.9) 100%
+  );}
 
 .formWrapper {
-  border-radius: 8px;
+  border-radius: 5px;
   padding: 24px;
   min-width: 320px;
   max-width: 335px;

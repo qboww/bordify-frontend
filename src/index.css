@@ -9,10 +9,15 @@
   --button-background-color: #42a5f5;
   --button-text-color: #161616;
   --transition-pattern: 250ms ease-in;
+
   --without-priority-background-color: #1616164d;
-  --low-priority-background-color: #8fa1d0;
-  --medium-priority-background-color: #ffb74d;
-  --high-priority-background-color: #4db6ac;
+  --low-priority-background-color: #a1e887;
+  --medium-priority-background-color: #ffa364;
+  --high-priority-background-color: #f44336;
+
+  --low-priority-text-color: #161616;
+  --medium-priority-text-color: #161616;
+  --high-priority-text-color: #ffffff;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -27,42 +32,43 @@
   --background-header: #161616;
   --background-sidebar: #121212;
   --background-logo: #232323;
-  --button-background-color-hoover: #8ad46f; 
-  --button-background-color: #A1E887;
+  --button-background-color-hoover: #64b5f6;
+  --button-background-color: #42a5f5;
   --button-text-color: #161616;
   --button-icon-color: #ffffff;
   --header-arrow-color: #ffffffcc;
   --secondary-btn-bgc: #121212;
   --secondary-btn-icon-bgc: #fff;
-  --small-btn-bgc: #B5F09C;
-  --small-btn-bgc-hover: #A1E887;
+  --small-btn-bgc: #90caf9;
+  --small-btn-bgc-hover: #42a5f5;
   --small-btn-color: #161616;
   --logo-icon-bgc: #1f1f1f;
-  --logo-icon-fill: #A1E887;
+  --logo-icon-fill: #42a5f5;
   --logo-text-color: #fff;
   --user-icon-fill: #151515;
   --user-icon-bgc: #1f1f1f;
   --input-bgc: #1f1f1f;
-  --input-border: #8ad46f;
+  --input-border: #42a5f5;
   --input-text-color: #ffffff;
   --input-box-shadow: rgba(22, 22, 22, 0.08);
-  --logout-icon-color: #A1E887;
+  --logout-icon-color: #42a5f5;
   --need-help-bgc: #1f1f1f;
   --border-sidebar: rgba(255, 255, 255, 0.1);
   --sidebar-board-item-bgc: rgba(31, 31, 31, 0.4);
   --task-line: #ffffff1a;
   --task-main: #ffffff80;
-  --dedline-bell: #A1E887;
+  --dedline-bell: #42a5f5;
   --board-scroll-thumb: rgba(255, 255, 255, 0.1);
   --board-scroll-track: #161616;
   --filter-separator: rgba(255, 255, 255, 0.1);
   --filter-btn-color: rgba(255, 255, 255, 0.4);
   --filter-btn-color-hover: rgba(255, 255, 255, 0.7);
   --filter-bgc: #151515;
+
   --without-priority-background-color: #1616164d;
-  --low-priority-background-color: #A1E88740; 
-  --medium-priority-background-color: #FFA364;
-  --high-priority-background-color: #A1E88780;
+  --low-priority-background-color: rgba(66, 165, 245, 0.25);
+  --medium-priority-background-color: #ffa364;
+  --high-priority-background-color: rgba(66, 165, 245, 0.5);
 }
 
 [theme='light'] {

@@ -1,5 +1,5 @@
 .btn {
-  border-radius: 8px;
+  border-radius: 5px;
   border: 1px solid transparent;
   cursor: pointer;
   color: var(--button-text-color);
@@ -23,7 +23,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 6px;
+    border-radius: 5px;
     svg {
       width: 14px;
       height: 14px;
@@ -32,7 +32,7 @@
   }
 }
 .btn_small {
-  border-radius: 8px;
+  border-radius: 5px;
   border: 1px solid transparent;
   cursor: pointer;
   color: var(--button-text-color);

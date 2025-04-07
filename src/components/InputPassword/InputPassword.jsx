@@ -19,7 +19,7 @@ const InputPassword = ({
     <div className={css.passwordContainer}>
       <InputField
         type={passwordShown ? 'text' : 'password'}
-        placeholder="Create a password"
+        placeholder="Change a password"
         name={name}
         value={defaultValue}
         register={register}

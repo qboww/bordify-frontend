@@ -29,11 +29,11 @@
   }
   &::-webkit-scrollbar-track {
     background-color: var(--board-scroll-track);
-    border-radius: 8px;
+    border-radius: 5px;
   }
   &::-webkit-scrollbar-thumb {
     background-color: var(--board-scroll-thumb);
-    border-radius: 8px;
+    border-radius: 5px;
   }
 }
 
