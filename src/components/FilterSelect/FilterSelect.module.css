@@ -1,4 +1,134 @@
+/* Menu Container */
+.menuContainer {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
 
+/* Header */
+.menuHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filtersTitle {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  color: var(--text-color);
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon_close {
+  width: 18px;
+  height: 18px;
+  stroke: var(--text-color);
+  transition: stroke 0.2s ease;
+}
+
+.closeButton:hover .icon_close {
+  stroke: var(--filter-btn-color-hover);
+}
+
+/* Separator */
+.separator {
+  height: 1px;
+  background-color: var(--filter-separator);
+  width: 100%;
+  margin: 4px 0;
+}
+
+/* Sections */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sectionTitle {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  color: var(--text-color);
+  text-align: left;
+}
+
+.optionsContainer {
+  display: flex;
+  gap: 8px;
+  text-align: left;
+}
+
+/* Sort Buttons */
+.sortButtons {
+  display: flex;
+  gap: 8px;
+}
+
+.sortButton {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: 1px solid var(--filter-separator);
+  background: var(--filter-bgc);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sortButton:hover {
+  background: var(--button-background-color-hoover);
+  color: var(--filter-btn-color-hover);
+}
+
+.sortIcon {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+}
+
+/* Show All Button */
+.footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.showAllButton {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: -0.02em;
+  color: var(--filter-btn-color);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+
+.showAllButton:hover {
+  color: var(--filter-btn-color-hover);
+}
+
+/* Filter Select Trigger */
 .container {
   position: absolute;
   top: 78px;
@@ -12,22 +142,11 @@
   background: var(--background-header);
   padding: 12px;
   border-radius: 5px;
+  transition: all 0.2s ease;
 }
 
-.icon_close_wrapper {
-  width: 18px;
-  height: 18px;
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  cursor: pointer;
-  z-index: 1;
-}
-
-.icon_close {
-  width: 18px;
-  height: 18px;
-  cursor: pointer;
+.container:hover {
+  background: var(--button-background-color-hoover);
 }
 
 .icon_filter {
@@ -36,65 +155,12 @@
   align-items: center;
   width: 20px;
   height: 20px;
-  stroke: var(--input-text-color);;
+  stroke: var(--input-text-color);
 }
 
 .text {
   color: var(--input-text-color);
   font-weight: 400;
   font-size: 16px;
-  font-weight: 400;
   letter-spacing: -0.02em;
-}
-
-.menuHeader {
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0 24px;
-  position: absolute;
-  top: 24px;
-  right: 0;
-}
-
-.filtersTitle {
-  font-family: var(--font-family);
-  font-weight: 500;
-  font-size: 18px;
-  letter-spacing: -0.02em;
-  color: var(--text-color);
-}
-
-.separator {
-  width: 100%;
-  height: 1px;
-  background-color: var(--filter-separator);
-  margin: 14px 0;
-}
-
-.labelTitle {
-  font-family: var(--font-family);
-  font-weight: 500;
-  font-size: 14px;
-  letter-spacing: -0.02em;
-  color: var(--text-color);
-}
-
-.selectAllButton {
-  font-family: var(--font-family);
-  font-weight: 400;
-  font-size: 12px;
-  letter-spacing: -0.02em;
-  text-decoration: underline;
-  text-decoration-skip-ink: none;
-  color: var(--filter-btn-color);
-  background-color: transparent;
-  position: absolute;
-  top: 74.4px;
-  right: 24px;
-}
-
-.selectAllButton:hover {
-  color: var(--filter-btn-color-hover);
 }

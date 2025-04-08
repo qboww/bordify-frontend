@@ -2,7 +2,7 @@ import { components } from 'react-select';
 import { useDispatch } from 'react-redux';
 import svg from '../images/icons.svg';
 import css from '../components/FilterSelect/FilterSelect.module.css';
-import { setNewFilter } from '../redux/columns/filterSlice';
+import { setNewFilter, setSortOrder } from '../redux/columns/filterSlice';
 
 const CustomMenu = props => {
   const { selectProps } = props;
@@ -14,9 +14,19 @@ const CustomMenu = props => {
     }
   };
 
-  const handleChange = ({ value }, selectProps) => {
+  const handleFilterChange = ({ value }) => {
     dispatch(setNewFilter(value));
+    if (selectProps && selectProps.onMenuClose) {
+      selectProps.onMenuClose();
+    }
+  };
 
+  const handleSortChange = (order) => {
+    dispatch(setSortOrder(order));
+  };
+
+  const handleShowAll = () => {
+    dispatch(setNewFilter('showAll'));
     if (selectProps && selectProps.onMenuClose) {
       selectProps.onMenuClose();
     }
@@ -24,24 +34,53 @@ const CustomMenu = props => {
 
   return (
     <components.Menu {...props}>
-      <div className={css.icon_close_wrapper} onClick={handleCloseMenu}>
-        <svg className={css.icon_close}>
-          <use href={`${svg}#icon-x-close-1`}></use>
-        </svg>
-      </div>
-      <div className={css.menuHeader}>
-        <div className={css.filtersTitle}>Filters</div>
+      <div className={css.menuContainer}>
+        <div className={css.menuHeader}>
+          <div className={css.filtersTitle}>Filters</div>
+          <button className={css.closeButton} onClick={handleCloseMenu}>
+            <svg className={css.icon_close}>
+              <use href={`${svg}#icon-x-close-1`}></use>
+            </svg>
+          </button>
+        </div>
+        
         <div className={css.separator}></div>
-        <div className={css.labelTitle}>Priority label</div>
-      </div>
-      {props.children}
-      <div className={css.selectAllContainer}>
-        <button
-          className={css.selectAllButton}
-          onClick={() => handleChange({ value: 'all' }, selectProps)}
-        >
-          Show all
-        </button>
+        
+        <div className={css.section}>
+          <div className={css.sectionTitle}>Priority label</div>
+          <div className={css.optionsContainer}>
+            {props.children}
+          </div>
+        </div>
+        
+        <div className={css.separator}></div>
+        
+        <div className={css.section}>
+          <div className={css.sectionTitle}>Sort by priority</div>
+          <div className={css.sortButtons}>
+            <button
+              className={css.sortButton}
+              onClick={() => handleSortChange('asc')}
+            >
+              Low to High
+            </button>
+            <button
+              className={css.sortButton}
+              onClick={() => handleSortChange('desc')}
+            >
+              High to Low
+            </button>
+          </div>
+        </div>
+        
+        <div className={css.footer}>
+          <button
+            className={css.showAllButton}
+            onClick={handleShowAll}
+          >
+            Show all
+          </button>
+        </div>
       </div>
     </components.Menu>
   );

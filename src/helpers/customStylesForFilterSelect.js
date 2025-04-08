@@ -1,4 +1,4 @@
-const customStyles = {
+export const customStyles = {
   control: () => ({
     width: '88px',
     height: '44px',
@@ -16,48 +16,42 @@ const customStyles = {
     caretColor: 'transparent',
   }),
   menu: () => ({
-    textAlign: 'left',
     border: '1px solid var(--button-background-color-hoover)',
-    backgroundColor: ' var(--filter-bgc)',
-    borderRadius: '5px',
+    backgroundColor: 'var(--filter-bgc)',
+    borderRadius: '8px',
     width: '300px',
-    height: '234px',
-    padding: '24px',
+    padding: '0',
     position: 'absolute',
     top: '68px',
     right: '24px',
     zIndex: '120',
+    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
   }),
   menuList: () => ({
-    position: 'absolute',
+    position: 'relative',
     zIndex: '120',
-    bottom: '30px',
     display: 'flex',
     flexDirection: 'column',
     gap: '8px',
-    width: '110px',
-    height: '96px',
+    height: 'auto',
+    padding: '0',
   }),
   option: (styles, state) => ({
     fontFamily: 'Poppins, sans-serif',
     fontWeight: '400',
-    fontSize: '12px',
+    fontSize: '14px',
     letterSpacing: '-0.02em',
     color: state.isSelected
       ? 'var(--filter-btn-color-hover)'
       : 'var(--filter-btn-color)',
     ':hover': {
-      color: state.isSelected
-        ? 'var(--filter-btn-color-hover)'
-        : 'var(--filter-btn-color)',
+      color: 'var(--filter-btn-color-hover)',
+      backgroundColor: 'var(--button-background-color-hoover)',
     },
     cursor: 'pointer',
-    minWidth: '23px',
-    maxWidth: '110px',
+    backgroundColor: 'transparent',
   }),
   singleValue: () => ({
     display: 'none',
   }),
 };
-
-export default customStyles;

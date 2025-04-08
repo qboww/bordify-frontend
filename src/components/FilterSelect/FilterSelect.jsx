@@ -5,7 +5,7 @@ import { setNewFilter } from '../../redux/columns/filterSlice';
 import options from '../../helpers/optionsForFilterSelect';
 import CustomOption from '../../helpers/CustomOptionsForFilterSelect';
 import CustomMenu from '../../helpers/CustomMenuForFilterSelect';
-import customStyles from '../../helpers/customStylesForFilterSelect';
+import {customStyles} from '../../helpers/customStylesForFilterSelect';
 
 import svg from '../../images/icons.svg';
 import css from './FilterSelect.module.css';
