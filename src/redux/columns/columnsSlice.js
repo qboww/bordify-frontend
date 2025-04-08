@@ -29,8 +29,6 @@ const initialState = {
   status: 'idle',
   isDragging: false,
   undoList: [],
-  // filter: null,
-  // filteredColumns: [],
   tasksOrderId: [],
   isLoading: false,
   error: null,
@@ -121,7 +119,6 @@ const columnSlice = createSlice({
           column => column._id === action.payload.data._id
         );
         column.title = action.payload.data.title;
-        // state.boardBackground = action.payload.data.backgroundImg;
       })
       .addCase(updateBoardThunk.fulfilled, (state, action) => {
         state.boardBackground = action.payload.data.backgroundImg;
@@ -189,7 +186,6 @@ const columnSlice = createSlice({
   },
 });
 export const {
-  // updateColumnOrder,
   startDrag,
   stopDrag,
   undoDrag,

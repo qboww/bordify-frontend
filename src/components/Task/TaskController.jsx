@@ -10,26 +10,28 @@ import {
 import ModalWithoutRedux from '../ModalWithoutRedux/ModalWithoutRedux';
 import CardForm from '../CardForm/CardForm';
 import { clsx } from 'clsx';
-import WarningDedline from '../WarningDedline/WarningDedline';
+import WarningDeadline from '../WarningDeadline/WarningDedline';
+
 export const TaskController = ({
-  taskid,
+  taskid: propTaskId, 
   columnid,
   boardid,
   task,
   className,
 }) => {
-
-  const { id } = useParams();
+  const { id: paramsBoardId } = useParams();
   const dispatch = useDispatch();
-  const [isEditOpen, setIsEditOpen] = useState();
-  const openEditModal = () => {
-    setIsEditOpen(true);
-  };
-  const closeEditModal = () => {
-    setIsEditOpen(false);
-  };
-  const handleDelete = taskid => {
-    dispatch(deleteTaskThunk({ boardid: id, columnid, taskid }));
+  const [isEditOpen, setIsEditOpen] = useState(false);
+
+  const openEditModal = () => setIsEditOpen(true);
+  const closeEditModal = () => setIsEditOpen(false);
+
+  const handleDelete = () => {
+    dispatch(deleteTaskThunk({ 
+      boardid: paramsBoardId || boardid, 
+      columnid, 
+      taskid: propTaskId 
+    }));
   };
 
   return (
@@ -37,29 +39,25 @@ export const TaskController = ({
       <ul className={clsx(s.taskActions, className)}>
         <li>
           <button className={s.btn_icon}>
-            <WarningDedline deadline={task.deadline} />
+            <WarningDeadline deadline={task.deadline} />
           </button>
         </li>
-
         <li>
           <button className={s.btn_icon} onClick={openEditModal}>
-            <svg
-              className={s.taskIcon}
-            >
+            <svg className={s.taskIcon}>
               <use href={`${icons}#icon-pencil`}></use>
             </svg>
           </button>
         </li>
         <li>
-          <button className={s.btn_icon} onClick={() => handleDelete(taskid)}>
-            <svg
-              className={s.taskIcon}
-            >
+          <button className={s.btn_icon} onClick={handleDelete}>
+            <svg className={s.taskIcon}>
               <use href={`${icons}#icon-trash`}></use>
             </svg>
           </button>
         </li>
       </ul>
+      
       {isEditOpen && (
         <ModalWithoutRedux
           isOpen={isEditOpen}
@@ -69,7 +67,7 @@ export const TaskController = ({
           <CardForm
             onClose={closeEditModal}
             type="edit"
-            boardid={id}
+            boardid={paramsBoardId || boardid}
             columnid={columnid}
             task={task}
           />

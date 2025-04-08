@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { bordifyApi } from '../../config/api';
-//https://task-pro-backend-xdd4.onrender.com/api/boards/:boardId/columns/:columnId/tasks
+
 export const createNewTaskThunk = createAsyncThunk(
   'tasks/createTask',
   async ({boardid, columnid, task}, thunkAPI) => {
@@ -16,7 +16,7 @@ export const createNewTaskThunk = createAsyncThunk(
     }
   }
 );
-//task-pro-backend-xdd4.onrender.com/api/boards/:boardId/columns/:columnId/tasks/:taskId
+
 export const updateTaskThunk = createAsyncThunk(
   'tasks/updateTask',
   async (data, thunkAPI) => {
@@ -34,7 +34,6 @@ export const updateTaskThunk = createAsyncThunk(
     }
   }
 );
-//task-pro-backend-xdd4.onrender.com/api/boards/:boardId/columns/:columnId/tasks/:taskId
 
 export const deleteTaskThunk = createAsyncThunk(
   'tasks/deleteTask',

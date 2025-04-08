@@ -1,7 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { bordifyApi } from '../../config/api';
 
-//task-pro-backend-xdd4.onrender.com/api/board/?_id=${boardId}
 export const getAllCoulumnsWithBoardIdThunk = createAsyncThunk(
   'columns/getAllColumns',
   async (boardId, thunkAPI) => {
@@ -14,7 +13,6 @@ export const getAllCoulumnsWithBoardIdThunk = createAsyncThunk(
   }
 );
 
-//task-pro-backend-xdd4.onrender.com/api/boards/:${boardid}/columns
 export const createNewColumnThunk = createAsyncThunk(
   'columns/createColumn',
   async ({ boardid, title }, thunkAPI) => {

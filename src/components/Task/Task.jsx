@@ -1,11 +1,10 @@
 import s from './Task.module.css';
 import { TaskController } from './TaskController';
 import { priorities } from '../../constants/dataForBoardModal';
-
 import { format } from 'date-fns';
 
 export const Task = ({ task, columnid, boardid }) => {
-  const { title, description, priority, deadline } = task;
+  const { title, description, priority, deadline, _id } = task; 
   const priorityColor = priorities.find(
     item => item.priorityLevel === priority
   );
@@ -14,7 +13,7 @@ export const Task = ({ task, columnid, boardid }) => {
   return (
     <li
       className={s.boardTaskBackground}
-      key={task._id}
+      key={_id} 
       style={{ borderColor: priorityColor.color }}
     >
       <ul className={s.boardTask}>
@@ -36,6 +35,7 @@ export const Task = ({ task, columnid, boardid }) => {
             <span className={s.bordifyps}>{formattedDeadline}</span>
           </div>
           <TaskController
+            taskid={_id}
             columnid={columnid}
             boardid={boardid}
             task={task}

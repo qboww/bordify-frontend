@@ -19,10 +19,6 @@ import { format } from 'date-fns';
 
 const CardForm = ({
   type,
-  // title,
-  // description,
-  // priority,
-  // deadline,
   task,
   onClose,
   boardid,
@@ -61,7 +57,8 @@ const CardForm = ({
     resolver: yupResolver(CardFormScheme),
     mode: 'onChange',
   });
-  const onSubmit = data => {
+  
+  const onSubmit = (data) => {
     const formData =
       type === 'create'
         ? {
@@ -69,9 +66,8 @@ const CardForm = ({
             columnid,
             task: {
               ...data,
-              deadline: data.deadline
-                ? data.deadline
-                : format(new Date(), 'yyyy-MM-dd'),
+              deadline: data.deadline || null, // Send null if no deadline
+              priority: selectedPriority,
             },
           }
         : {
@@ -80,13 +76,12 @@ const CardForm = ({
             taskid: task._id,
             body: {
               ...data,
-              deadline: data.deadline
-                ? data.deadline
-                : format(new Date(), 'yyyy-MM-dd'),
+              deadline: data.deadline || null, // Send null if no deadline
+              priority: selectedPriority,
             },
           };
+  
     dispatch(options[type].onSubmitThunk(formData));
-
     onClose();
     reset();
   };
