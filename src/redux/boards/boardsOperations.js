@@ -32,7 +32,6 @@ export const updateBoardThunk = createAsyncThunk(
     const { _id, ...body } = board;
     try {
       const { data } = await bordifyApi.patch(`api/boards/${_id}`, body);
-      console.log(data);
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
