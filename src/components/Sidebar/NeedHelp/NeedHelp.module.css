@@ -53,6 +53,7 @@
   stroke: var(--logo-text-color);
   fill: transparent;
   margin-right: 8px;
+  margin-bottom: 3px;
 }
 
 .wrapper {

@@ -56,11 +56,14 @@
       }
       .left_side {
         display: flex;
+        align-items: center;
+        justify-content: space-between;
         gap: 8px;
         .board_item_svg {
           fill: none;
           stroke: var(--text-color-sidebar);
           opacity: 0.5;
+          margin-bottom: 2px;
         }
       }
 

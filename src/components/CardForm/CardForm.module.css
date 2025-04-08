@@ -14,11 +14,11 @@
   .bottom_inputs {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 18px;
     section {
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 8px;
     }
     h2 {
       font-weight: 300;

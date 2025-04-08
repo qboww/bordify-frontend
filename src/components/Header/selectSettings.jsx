@@ -80,6 +80,7 @@ export const customStyles = {
     ...provided,
     opacity: 0,
     pointerEvents: 'none',
+    borderRadius: '8px',
   }),
 };
 

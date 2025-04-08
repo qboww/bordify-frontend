@@ -2,16 +2,15 @@
 .container {
   position: absolute;
   top: 78px;
-  right: 24px;
+  right: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   cursor: pointer;
   color: var(--text-color);
-  backdrop-filter: blur(40px);
-  border: 2px solid var(--small-btn-bgc);
-  padding: 8px;
+  background: var(--background-header);
+  padding: 12px;
   border-radius: 5px;
 }
 
@@ -37,11 +36,11 @@
   align-items: center;
   width: 20px;
   height: 20px;
-  stroke: white;
+  stroke: var(--input-text-color);;
 }
 
 .text {
-  color: white;
+  color: var(--input-text-color);
   font-weight: 400;
   font-size: 16px;
   font-weight: 400;

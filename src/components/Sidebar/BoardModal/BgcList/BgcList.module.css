@@ -14,7 +14,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid transparent;
+  border: 2px solid rgba(128, 128, 128, 0.151);
   transition: border-color var(--transition-pattern),
     transform var(--transition-pattern);
 }

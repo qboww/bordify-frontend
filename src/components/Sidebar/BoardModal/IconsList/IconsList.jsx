@@ -27,8 +27,8 @@ const IconsList = ({ selectedIcon, setSelectedIcon, register, name }) => {
           />
           <label htmlFor={icon.iconName}>
             <svg
-              width="18"
-              height="18"
+              width="20"
+              height="20"
               className={clsx(s.icon_svg, {
                 [s.selected]: selectedIcon === icon.iconName,
               })}

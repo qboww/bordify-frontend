@@ -1,12 +1,12 @@
 const customStyles = {
   control: () => ({
     width: '88px',
-    height: '36px',
+    height: '44px',
     backgroundColor: 'transparent',
     cursor: 'pointer',
     position: 'absolute',
-    top: '22px',
-    right: '26px',
+    top: '20px',
+    right: '24px',
   }),
   indicatorsContainer: () => ({
     display: 'none',

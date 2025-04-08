@@ -5,7 +5,7 @@
   align-items: center;
   gap: 8px;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 24px;
   letter-spacing: -0.04em;
   color: var(--logo-text-color);
   .icon_box {
@@ -14,13 +14,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     overflow: hidden;
     svg {
       fill: var(--logo-icon-fill);
-      width: 16px;
-      height: 16px;
+      width: 18px;
+      height: 18px;
     }
   }
 }

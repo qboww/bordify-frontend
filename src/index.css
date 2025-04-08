@@ -4,7 +4,7 @@
 
 :root {
   --text-color: #ffffff;
-  --background-color: #232323;
+  --background-color: #1e1e1e;
   --button-background-color-hoover: #64b5f6;
   --button-background-color: #42a5f5;
   --button-text-color: #161616;
@@ -12,7 +12,7 @@
 
   --without-priority-background-color: #1616164d;
   --low-priority-background-color: #a1e887;
-  --medium-priority-background-color: #ffa364;
+  --medium-priority-background-color: #ff8a50;
   --high-priority-background-color: #f44336;
 
   --low-priority-text-color: #161616;
@@ -28,133 +28,133 @@
 [theme='dark'] {
   --text-color: #ffffff;
   --text-color-sidebar: #ffffff;
-  --background-color: #232323;
-  --background-header: #161616;
-  --background-sidebar: #121212;
-  --background-logo: #232323;
+  --background-color: #1e1e1e;
+  --background-header: #121212;
+  --background-sidebar: #0f0f0f;
+  --background-logo: #1e1e1e;
   --button-background-color-hoover: #64b5f6;
   --button-background-color: #42a5f5;
-  --button-text-color: #161616;
-  --button-icon-color: #ffffff;
-  --header-arrow-color: #ffffffcc;
+  --button-text-color: #ffffff;
+  --button-icon-color: #000000;
+  --header-arrow-color: #ffffff;
   --secondary-btn-bgc: #121212;
   --secondary-btn-icon-bgc: #fff;
   --small-btn-bgc: #90caf9;
   --small-btn-bgc-hover: #42a5f5;
-  --small-btn-color: #161616;
-  --logo-icon-bgc: #1f1f1f;
+  --small-btn-color: #121212;
+  --logo-icon-bgc: #1a1a1a;
   --logo-icon-fill: #42a5f5;
   --logo-text-color: #fff;
-  --user-icon-fill: #151515;
-  --user-icon-bgc: #1f1f1f;
-  --input-bgc: #1f1f1f;
+  --user-icon-fill: #0f0f0f;
+  --user-icon-bgc: #1a1a1a;
+  --input-bgc: #1a1a1a;
   --input-border: #42a5f5;
   --input-text-color: #ffffff;
-  --input-box-shadow: rgba(22, 22, 22, 0.08);
+  --input-box-shadow: rgba(22, 22, 22, 0.15); 
   --logout-icon-color: #42a5f5;
-  --need-help-bgc: #1f1f1f;
-  --border-sidebar: rgba(255, 255, 255, 0.1);
-  --sidebar-board-item-bgc: rgba(31, 31, 31, 0.4);
-  --task-line: #ffffff1a;
-  --task-main: #ffffff80;
+  --need-help-bgc: #1a1a1a;
+  --border-sidebar: rgba(255, 255, 255, 0.15); 
+  --sidebar-board-item-bgc: rgba(31, 31, 31, 0.6); 
+  --task-line: #ffffff26;
+  --task-main: #ffffffcc; 
   --dedline-bell: #42a5f5;
-  --board-scroll-thumb: rgba(255, 255, 255, 0.1);
-  --board-scroll-track: #161616;
-  --filter-separator: rgba(255, 255, 255, 0.1);
-  --filter-btn-color: rgba(255, 255, 255, 0.4);
-  --filter-btn-color-hover: rgba(255, 255, 255, 0.7);
-  --filter-bgc: #151515;
+  --board-scroll-thumb: rgba(255, 255, 255, 0.2); 
+  --board-scroll-track: #121212;
+  --filter-separator: rgba(255, 255, 255, 0.2); 
+  --filter-btn-color: rgba(255, 255, 255, 0.6);
+  --filter-btn-color-hover: #ffffff;
+  --filter-bgc: #121212;
 
-  --without-priority-background-color: #1616164d;
-  --low-priority-background-color: rgba(66, 165, 245, 0.25);
-  --medium-priority-background-color: #ffa364;
-  --high-priority-background-color: rgba(66, 165, 245, 0.5);
+  --without-priority-background-color: #16161680;
+  --low-priority-background-color: rgba(66, 165, 245, 0.4);
+  --medium-priority-background-color: #ff8a50;
+  --high-priority-background-color: rgba(244, 67, 54, 0.7);
 }
 
 [theme='light'] {
-  --text-color: #3a3a3a;
-  --text-color-sidebar: #3a3a3a;
-  --background-color: #f8fafb;
-  --background-header: #f0f4f7;
-  --background-sidebar: #e6edf2;
-  --background-logo: #3a3a3a;
-  --button-background-color: #6bb9d6;
-  --button-background-color-hoover: #4da7cc;
+  --text-color: #2a2a2a; 
+  --text-color-sidebar: #2a2a2a;
+  --background-color: #f5f9fc; 
+  --background-header: #e8f0f7;
+  --background-sidebar: #dce6f0; 
+  --background-logo: #2a2a2a;
+  --button-background-color: #5aa5d2;
+  --button-background-color-hoover: #3d95c2; 
   --button-text-color: #ffffff;
-  --button-icon-color: #4da7cc;
-  --header-arrow-color: #3a3a3acc;
+  --button-icon-color: #3d95c2;
+  --header-arrow-color: #2a2a2a;
   --secondary-btn-bgc: #ffffff;
-  --secondary-btn-icon-bgc: #d7c1a5;
-  --small-btn-bgc: #e3d5c6;
-  --small-btn-bgc-hover: #d7c1a5;
-  --small-btn-color: #3a3a3a;
-  --logo-icon-bgc: #e8f0f5;
-  --logo-icon-fill: #6bb9d6;
-  --logo-text-color: #3a3a3a;
+  --secondary-btn-icon-bgc: #c7b095;
+  --small-btn-bgc: #d7c1a5;
+  --small-btn-bgc-hover: #c7b095;
+  --small-btn-color: #2a2a2a;
+  --logo-icon-bgc: #e0eef7; 
+  --logo-icon-fill: #5aa5d2;
+  --logo-text-color: #2a2a2a;
   --user-icon-fill: #ffffff;
-  --user-icon-bgc: #e8f0f5;
+  --user-icon-bgc: #e0eef7;
   --input-bgc: #ffffff;
-  --input-border: #4da7cc;
-  --input-text-color: #3a3a3a;
-  --input-box-shadow: rgba(58, 58, 58, 0.08);
-  --logout-icon-color: #6bb9d6;
-  --need-help-bgc: #f0f4f7;
-  --border-sidebar: rgba(58, 58, 58, 0.1);
-  --sidebar-board-item-bgc: rgba(230, 237, 242, 0.6);
-  --task-line: #3a3a3a;
-  --task-main: rgba(58, 58, 58, 0.7);
-  --dedline-bell: #d7c1a5;
-  --board-scroll-thumb: #d1e0e8;
+  --input-border: #3d95c2;
+  --input-text-color: #2a2a2a;
+  --input-box-shadow: rgba(42, 42, 42, 0.1); 
+  --logout-icon-color: #5aa5d2;
+  --need-help-bgc: #e8f0f7;
+  --border-sidebar: rgba(42, 42, 42, 0.15);
+  --sidebar-board-item-bgc: rgba(220, 230, 240, 0.8);
+  --task-line: #2a2a2a30;
+  --task-main: #2a2a2a;
+  --dedline-bell: #c7b095;
+  --board-scroll-thumb: #c1d5e5; 
   --board-scroll-track: #ffffff;
-  --filter-separator: rgba(58, 58, 58, 0.1);
-  --filter-btn-color: rgba(58, 58, 58, 0.4);
-  --filter-btn-color-hover: #3a3a3a;
-  --filter-bgc: #f0f4f7;
-  --without-priority-background-color: #f0f4f7;
-  --low-priority-background-color: #d1e0e8;
-  --medium-priority-background-color: #e3d5c6;
-  --high-priority-background-color: #6bb9d6;
+  --filter-separator: rgba(42, 42, 42, 0.15);
+  --filter-btn-color: rgba(42, 42, 42, 0.6);
+  --filter-btn-color-hover: #2a2a2a;
+  --filter-bgc: #e8f0f7;
+  --without-priority-background-color: #e8f0f7;
+  --low-priority-background-color: #c1d5e5;
+  --medium-priority-background-color: #d7c1a5;
+  --high-priority-background-color: #5aa5d2;
 }
 
 [theme='cyan'] {
   --text-color: #000000;
   --text-color-sidebar: #fff;
-  --background-color: #e0f7fa;
+  --background-color: #d0f0f7;
   --background-header: #fff;
-  --background-sidebar: #00838f;
-  --background-logo: #e0f7fa;
+  --background-sidebar: #006064; 
+  --background-logo: #d0f0f7;
   --button-background-color: #ef5350;
   --button-background-color-hoover: #e53935;
   --button-text-color: #ffffff;
-  --button-icon-color: #161616;
-  --header-arrow-color: #161616cc;
+  --button-icon-color: #000000;
+  --header-arrow-color: #000000;
   --secondary-btn-bgc: #fff;
-  --secondary-btn-icon-bgc: #00838f;
+  --secondary-btn-icon-bgc: #006064;
   --small-btn-bgc: #ef5350;
   --small-btn-bgc-hover: #e53935;
   --small-btn-color: #fff;
-  --logo-icon-bgc: #b2ebf2;
-  --logo-icon-fill: #00838f;
+  --logo-icon-bgc: #a2e4ed; 
+  --logo-icon-fill: #006064;
   --logo-text-color: #fff;
   --user-icon-fill: #fff;
-  --user-icon-bgc: #b2ebf2;
-  --input-bgc: transparent;
+  --user-icon-bgc: #a2e4ed;
+  --input-bgc: rgba(255, 255, 255, 0.9); 
   --input-border: #ef5350;
-  --input-text-color: #161616;
-  --input-box-shadow: rgba(22, 22, 22, 0.08);
-  --logout-icon-color: #fff;
-  --need-help-bgc: rgba(178, 235, 242, 0.4);
-  --border-sidebar: rgba(255, 255, 255, 0.1);
-  --sidebar-board-item-bgc: rgba(255, 255, 255, 0.2);
-  --task-line: #1616161a;
-  --task-main: rgba(22, 22, 22, 0.7);
-  --dedline-bell: #00838f;
-  --board-scroll-thumb: #80deea;
+  --input-text-color: #000000;
+  --input-box-shadow: rgba(0, 0, 0, 0.1); 
+  --logout-icon-color: #ef5350;
+  --need-help-bgc: rgba(162, 228, 237, 0.6); 
+  --border-sidebar: rgba(255, 255, 255, 0.2); 
+  --sidebar-board-item-bgc: rgba(255, 255, 255, 0.3);
+  --task-line: #00000020; 
+  --task-main: #000000; 
+  --dedline-bell: #006064;
+  --board-scroll-thumb: #4dd0e1; 
   --board-scroll-track: white;
-  --filter-separator: rgba(22, 22, 22, 0.1);
-  --filter-btn-color: rgba(22, 22, 22, 0.4);
-  --filter-btn-color-hover: rgb(22, 22, 22);
-  --filter-bgc: #fcfcfc;
+  --filter-separator: rgba(0, 0, 0, 0.15); 
+  --filter-btn-color: rgba(0, 0, 0, 0.6);
+  --filter-btn-color-hover: #000000;
+  --filter-bgc: #f8f8f8;
 }
 
 body {
@@ -174,7 +174,6 @@ div {
   padding: 0;
 }
 
-/*Start Стилі  бібліотека react-datepicker */
 div .react-datepicker {
   background-color: var(--background-header);
   border: 1px solid var(--button-background-color);
@@ -198,4 +197,3 @@ div .react-datepicker-ignore-onclickoutside {
   color: var(--button-background-color);
   background-color: inherit;
 }
-/* End Стилі  бібліотека react-datepicker  */

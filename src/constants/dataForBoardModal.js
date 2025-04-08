@@ -65,19 +65,19 @@ export const previewBgc = [
 ];
 
 export const icons = [
-  { iconName: 'icon_1', svg: `${icon}#icon-square` },
-  { iconName: 'icon_2', svg: `${icon}#icon-star` },
-  { iconName: 'icon_3', svg: `${icon}#icon-loading` },
-  { iconName: 'icon_4', svg: `${icon}#icon-puzzle` },
-  { iconName: 'icon_5', svg: `${icon}#icon-container` },
-  { iconName: 'icon_6', svg: `${icon}#icon-blitz` },
-  { iconName: 'icon_7', svg: `${icon}#icon-colors` },
-  { iconName: 'icon_8', svg: `${icon}#icon-hexagon` },
+  { iconName: 'icon_1', svg: `${icon}#icon-train` },
+  { iconName: 'icon_2', svg: `${icon}#icon-heart` },
+  { iconName: 'icon_3', svg: `${icon}#icon-beach` },
+  { iconName: 'icon_4', svg: `${icon}#icon-cap` },
+  { iconName: 'icon_5', svg: `${icon}#icon-laptop` },
+  { iconName: 'icon_6', svg: `${icon}#icon-chat` },
+  { iconName: 'icon_7', svg: `${icon}#icon-tv` },
+  { iconName: 'icon_8', svg: `${icon}#icon-bag` },
 ];
 
 export const priorities = [
-  { priorityLevel: 'low', color: '#A1E887' },
-  { priorityLevel: 'medium', color: '#FFA364' },
+  { priorityLevel: 'low', color: '#4caf50' },
+  { priorityLevel: 'medium', color: '#ff9800' },
   { priorityLevel: 'high', color: '#f44336' },
-  { priorityLevel: 'none', color: 'rgba(255, 255, 255, 0.3)' },
+  { priorityLevel: 'none', color: '#3a3a3a' },
 ];

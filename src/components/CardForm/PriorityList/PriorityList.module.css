@@ -23,15 +23,14 @@ label {
   align-items: center;
   width: 14px;
   height: 14px;
-  border-radius: 50%;
-  padding: 1.5px;
+  border-radius: 5px;
 }
 .icon_circle {
-  border-radius: 50%;
+  border-radius: 5px;
   opacity: 0.5;
   width: 100%;
   height: 100%;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   transition: opacity var(--transition-pattern), scale var(--transition-pattern);
 }
 .icon_wrap:hover .icon_circle{
@@ -44,5 +43,6 @@ label {
 .selected {
   scale: 1.1;
   opacity: 1;
-  border-color: var(--background-header);
+  border-width: 2px;
+  border-color: var(--input-border);
 }

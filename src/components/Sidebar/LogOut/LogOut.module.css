@@ -16,8 +16,9 @@
 .icon {
   stroke: var(--logout-icon-color);
   fill: transparent;
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
+  margin-bottom: 3px;
 }
 
 @media screen and (min-width: 1440px) {
