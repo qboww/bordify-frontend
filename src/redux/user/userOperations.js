@@ -56,6 +56,8 @@ export const logoutThunk = createAsyncThunk(
     try {
       await bordifyApi.post('api/auth/logout');
       clearToken();
+      localStorage.setItem('theme', 'dark');
+      document.documentElement.setAttribute('theme', 'dark');
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);
     }

@@ -1,35 +1,48 @@
 import { useEffect } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setCredentials } from '../../redux/user/userSlice';
+import { logEvent } from "firebase/analytics";
+import { analytics } from '../../config/firebase-config';
+import Loader from '../../components/Loader/Loader';
+import { selectIsLoggined } from '../../redux/user/userSelectors';
 
 export const GoogleRedirectPage = () => {
   const [searchParams] = useSearchParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const isLoggedIn = useSelector(selectIsLoggined);
 
   useEffect(() => {
-    const sid = searchParams.get('sid');
-    const accessToken = searchParams.get('accessToken');
-    const refreshToken = searchParams.get('refreshToken');
-
-    if (sid && accessToken && refreshToken) {
-      dispatch(setCredentials({
-        sid,
-        accessToken,
-        refreshToken
-      }));
-      
-      // Redirect to dashboard or home page after successful login
-      navigate('/dashboard'); // Or your desired route
-    } else {
-      // Handle error case
-      navigate('/auth/login?error=google_auth_failed');
+    if (isLoggedIn) {
+      navigate('/dashboard', { replace: true });
+      return;
     }
-  }, [dispatch, navigate, searchParams]);
-  
 
-  return null;
+    const params = {
+      sid: searchParams.get('sid'),
+      accessToken: searchParams.get('accessToken'),
+      refreshToken: searchParams.get('refreshToken')
+    };
+
+    if (params.sid && params.accessToken && params.refreshToken) {
+      // Dispatch the action
+      dispatch(setCredentials(params));
+      
+      // Track login and navigate
+      if (analytics) {
+        logEvent(analytics, 'login', { method: 'Google' });
+      }
+      navigate('/dashboard', { replace: true });
+    } else {
+      navigate('/auth/login', { 
+        replace: true,
+        state: { error: 'google_auth_failed' }
+      });
+    }
+  }, [dispatch, navigate, searchParams, isLoggedIn]);
+
+  return <Loader />;
 };
 
 export default GoogleRedirectPage;

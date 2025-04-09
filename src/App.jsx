@@ -11,6 +11,7 @@ import { lazy, useEffect } from 'react';
 import Loader from './components/Loader/Loader';
 import { Board } from './components/Board/Board';
 import GoogleRedirectPage from './pages/GoogleRedirectPage/GoogleRedirectPage';
+import { analytics } from './config/firebase-config';
 
 
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));

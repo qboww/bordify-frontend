@@ -103,7 +103,7 @@ export const Board = () => {
           className={s.board_wrap}
         >
           <div className={s.boardTitle}>
-            <h2>{boardTitle}</h2>
+            {boardTitle && <h2>{boardTitle}</h2>}
           </div>
           <div className={s.board}>
             <ul>
