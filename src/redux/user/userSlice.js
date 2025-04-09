@@ -21,6 +21,7 @@ const initialState = {
   isRefreshing: false,
   error: false,
 };
+
 const userSlice = createSlice({
   name: 'user',
   initialState,
@@ -31,6 +32,12 @@ const userSlice = createSlice({
     setUserEmail: (state, { payload }) => {
       state.login.email = payload.email;
     },
+  },
+  setCredentials: (state, { payload }) => {
+    state.sid = payload.sid;
+    state.accessToken = payload.accessToken;
+    state.refreshToken = payload.refreshToken;
+    state.isLoggined = true;
   },
   extraReducers: builder => {
     builder
@@ -67,7 +74,6 @@ const userSlice = createSlice({
         state.refreshToken = payload.data.refreshToken;
         state.sid = payload.data.sid;
       })
-
       .addCase(refreshUserThunk.fulfilled, (state, { payload }) => {
         state.login = payload.data;
         state.userTheme = payload.data.theme;

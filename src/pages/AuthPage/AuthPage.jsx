@@ -1,12 +1,19 @@
+// src/pages/AuthPage/AuthPage.jsx
 import { NavLink, useParams } from 'react-router-dom';
 import AuthForm from '../../components/AuthForm/AuthForm';
 import { LoginSchame, RegistrationSchame } from '../../schemas/AuthSchemas';
 import { loginThunk, registerThunk } from '../../redux/user/userOperations';
 import css from './AuthPage.module.css';
 import DocumentTitle from '../../components/Title/Title';
+import { GoogleAuthButton } from '../../components/GoogleAuthButton/GoogleAuthButton';
+import { googleAuthThunk } from '../../redux/user/userOperations';
 
 export const AuthPage = () => {
   const { type } = useParams();
+
+  const handleGoogleAuth = () => {
+    window.location.href = 'http://localhost:3000/api/auth/google';
+  };
 
   return (
     <>
@@ -17,7 +24,6 @@ export const AuthPage = () => {
       </DocumentTitle>
 
       <div className={css.background}>
-        {/* {isLoading && <Loader />} */}
         <div className={css.formWrapper}>
           <ul className={css.authNav}>
             <li>
@@ -45,6 +51,14 @@ export const AuthPage = () => {
               </NavLink>
             </li>
           </ul>
+          
+          {/* Add Google Auth Button */}
+          <div className={css.socialAuthWrapper}>
+            <GoogleAuthButton onClick={handleGoogleAuth} />
+          </div>
+          
+          <div className={css.divider}>or</div>
+          
           {type === 'login' ? (
             <AuthForm
               loginForm
@@ -65,6 +79,5 @@ export const AuthPage = () => {
     </>
   );
 };
+
 export default AuthPage;
-
-

@@ -16,15 +16,18 @@ export const registerThunk = createAsyncThunk(
   'auth/register',
   async (credentials, thunkApi) => {
     try {
-      console.log('Sending registration request with:', credentials); 
+      console.log('Sending registration request with:', credentials);
       const { data } = await bordifyApiUnAutorized.post(
         'api/auth/register',
         credentials
       );
-      console.log('Registration response:', data); 
+      console.log('Registration response:', data);
       return data;
     } catch (error) {
-      console.error('Registration error:', error.response?.data || error.message);
+      console.error(
+        'Registration error:',
+        error.response?.data || error.message
+      );
       return thunkApi.rejectWithValue(error.response?.data || error.message);
     }
   }
@@ -126,6 +129,45 @@ export const resendVerificationEmailThunk = createAsyncThunk(
         email: body,
       });
       return data.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+// src/redux/user/userOperations.js
+export const googleAuthThunk = createAsyncThunk(
+  'auth/google',
+  async (_, thunkAPI) => {
+    try {
+      window.location.href = 'http://localhost:3000/api/auth/google';
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const googleAuthRedirectThunk = createAsyncThunk(
+  'auth/google-redirect',
+  async (credentials, thunkAPI) => {
+    try {
+      const { sid, accessToken, refreshToken } = credentials;
+
+      // Save tokens to Redux state
+      thunkAPI.dispatch(
+        setCredentials({
+          sid,
+          accessToken,
+          refreshToken,
+        })
+      );
+
+      // Set token for API calls
+      setToken(accessToken);
+
+      // Fetch user data
+      const { data } = await bordifyApi.get('api/auth/current');
+      return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }

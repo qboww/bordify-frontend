@@ -10,6 +10,8 @@ import { selectIsRefreshing } from './redux/user/userSelectors';
 import { lazy, useEffect } from 'react';
 import Loader from './components/Loader/Loader';
 import { Board } from './components/Board/Board';
+import GoogleRedirectPage from './pages/GoogleRedirectPage/GoogleRedirectPage';
+
 
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 const ScreensPage = lazy(() => import('./pages/ScreensPage/ScreensPage'));
@@ -24,6 +26,7 @@ function App() {
     <Loader />
   ) : (
     <Routes>
+      <Route path="/" element={<GoogleRedirectPage />} />
       <Route
         path="/"
         element={
