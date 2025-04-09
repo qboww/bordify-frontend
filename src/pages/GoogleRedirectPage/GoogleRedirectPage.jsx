@@ -1,12 +1,12 @@
-// src/pages/GoogleRedirectPage/GoogleRedirectPage.jsx
 import { useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { googleAuthRedirectThunk } from '../../redux/user/userOperations';
+import { setCredentials } from '../../redux/user/userSlice';
 
-const GoogleRedirectPage = () => {
+export const GoogleRedirectPage = () => {
   const [searchParams] = useSearchParams();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const sid = searchParams.get('sid');
@@ -14,15 +14,20 @@ const GoogleRedirectPage = () => {
     const refreshToken = searchParams.get('refreshToken');
 
     if (sid && accessToken && refreshToken) {
-      dispatch(
-        googleAuthRedirectThunk({
-          sid,
-          accessToken,
-          refreshToken,
-        })
-      );
+      dispatch(setCredentials({
+        sid,
+        accessToken,
+        refreshToken
+      }));
+      
+      // Redirect to dashboard or home page after successful login
+      navigate('/dashboard'); // Or your desired route
+    } else {
+      // Handle error case
+      navigate('/auth/login?error=google_auth_failed');
     }
-  }, [dispatch, searchParams]);
+  }, [dispatch, navigate, searchParams]);
+  
 
   return null;
 };

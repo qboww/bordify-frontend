@@ -28,7 +28,7 @@ function App() {
     <Routes>
       <Route path="/" element={<GoogleRedirectPage />} />
       <Route
-        path="/"
+        path="/dashboard" // Add this dashboard route
         element={
           <PrivateRoute>
             <DashboardLayout />

@@ -32,12 +32,13 @@ const userSlice = createSlice({
     setUserEmail: (state, { payload }) => {
       state.login.email = payload.email;
     },
-  },
-  setCredentials: (state, { payload }) => {
-    state.sid = payload.sid;
-    state.accessToken = payload.accessToken;
-    state.refreshToken = payload.refreshToken;
-    state.isLoggined = true;
+    setCredentials: (state, { payload }) => {
+      state.sid = payload.sid;
+      state.accessToken = payload.accessToken;
+      state.refreshToken = payload.refreshToken;
+      state.isLoggined = true;
+      state.isLoading = false;
+    }
   },
   extraReducers: builder => {
     builder
@@ -101,5 +102,5 @@ const userSlice = createSlice({
   },
 });
 
-export const { setIsVerified, setUserEmail } = userSlice.actions;
+export const { setIsVerified, setUserEmail, setCredentials } = userSlice.actions;
 export const userReducer = userSlice.reducer;
