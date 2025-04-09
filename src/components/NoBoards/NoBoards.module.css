@@ -1,6 +1,7 @@
 .no_boards {
-  width: 35%;
+  width: 30%;
 }
+
 .no_boards_wrap {
   display: flex;
   align-items: center;
