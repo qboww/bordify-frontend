@@ -1,27 +1,34 @@
-import 'typeface-roboto';
-import './App.css';
-import { Route, Routes } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { lazy, useEffect } from 'react';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import { DashboardLayout, WelcomePage, NotFound, AuthPage } from './pages';
 import PublicRoute from './routes/PublicRoute';
 import PrivateRoute from './routes/PrivateRoute';
 import { refreshUserThunk } from './redux/user/userOperations';
-import { useDispatch, useSelector } from 'react-redux';
 import { selectIsRefreshing } from './redux/user/userSelectors';
-import { lazy, useEffect } from 'react';
+import { selectBoards } from './redux/boards/boardsSelectors';
 import Loader from './components/Loader/Loader';
-import { Board } from './components/Board/Board';
 import GoogleRedirectPage from './pages/GoogleRedirectPage/GoogleRedirectPage';
-import { analytics } from './config/firebase-config';
-
 
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 const ScreensPage = lazy(() => import('./pages/ScreensPage/ScreensPage'));
+
 function App() {
   const dispatch = useDispatch();
   const isRefreshing = useSelector(selectIsRefreshing);
+  const boards = useSelector(selectBoards);
+  
   useEffect(() => {
     dispatch(refreshUserThunk());
   }, [dispatch]);
+
+  const DashboardRedirect = () => {
+    if (boards.length > 0) {
+      return <Navigate to={`/dashboard/board/${boards[0]._id}`} replace />;
+    }
+
+    return <HomePage />;
+  };
 
   return isRefreshing ? (
     <Loader />
@@ -29,14 +36,14 @@ function App() {
     <Routes>
       <Route path="/" element={<GoogleRedirectPage />} />
       <Route
-        path="/dashboard" // Add this dashboard route
+        path="/dashboard"
         element={
           <PrivateRoute>
             <DashboardLayout />
           </PrivateRoute>
         }
       >
-        <Route index element={<HomePage />} />
+        <Route index element={<DashboardRedirect />} />
         <Route path="board/:id" element={<ScreensPage />} />
       </Route>
       <Route
