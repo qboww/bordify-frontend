@@ -40,7 +40,7 @@ const PriorityList = ({
             >
               <span
                 className={clsx(
-                  s.icon_circle,
+                  s.icon_square,
                     {
                     [s.selected]: selectedPriority === priority.priorityLevel,
                   }

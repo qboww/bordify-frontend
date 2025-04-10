@@ -1,14 +1,7 @@
-/* .icon {
-  stroke: var(--text-color);
-  fill: none;
-  transition: stroke var(--transition-pattern);
-} */
 .closeBtn {
   position: absolute;
   top: 12px;
   right: 12px;
-  /* width: 14px; */
-  /* height: 34px; */
   padding: 2px;
   border: none;
 

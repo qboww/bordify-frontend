@@ -14,6 +14,7 @@ import {
   selectFilteredTasks,
 } from '../../redux/columns/columnsSelectors';
 import icon from '../../images/icons.svg';
+import { setCurrentBoard } from '../../redux/boards/boardsSlice';
 
 import { useEffect, useState } from 'react';
 import { Column } from '../Column/Column';
@@ -26,14 +27,22 @@ import ColumnForm from '../ColumnForm/ColumnForm';
 import FilterSelect from '../FilterSelect/FilterSelect';
 import { useMedia } from '../../hooks/useMedia';
 import { getBackgroundImage } from '../../helpers/getBackgroundImage.js';
+
 export const Board = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
+
   useEffect(() => {
     if (id) {
       dispatch(getAllCoulumnsWithBoardIdThunk(id));
+      dispatch(setCurrentBoard(id)); 
     }
+
+    return () => {
+      dispatch(setCurrentBoard(null)); 
+    };
   }, [id, dispatch]);
+  
   const boardTitle = useSelector(selectBoardTitle);
   const columns = useSelector(selectFilteredTasks);
   const backgroundImg = useSelector(selectBoardBackground);

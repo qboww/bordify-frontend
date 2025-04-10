@@ -51,9 +51,6 @@ export const ListMyBoards = ({ className }) => {
         return (
           <li key={board._id} className={s.li_board_item}>
             <NavLink
-              onClick={() => {
-                console.log('click');
-              }}
               to={`board/${board._id}`}
               className={({ isActive }) =>
                 clsx(s.board_item, board._id === currentBoardId ? s.active : '')

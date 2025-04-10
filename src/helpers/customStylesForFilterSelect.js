@@ -47,6 +47,7 @@ export const customStyles = {
     ':hover': {
       color: 'var(--filter-btn-color-hover)',
       backgroundColor: 'var(--button-background-color-hoover)',
+      borderRadius: '5px'
     },
     cursor: 'pointer',
     backgroundColor: 'transparent',
