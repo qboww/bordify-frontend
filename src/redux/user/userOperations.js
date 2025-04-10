@@ -41,6 +41,11 @@ export const loginThunk = createAsyncThunk(
         'api/auth/login',
         credentials
       );
+
+      if (data.data.user?.isVerified === false) {
+        return thunkApi.rejectWithValue('Please verify your email first');
+      }
+
       localStorage.setItem('accessToken', data.data.accessToken);
       localStorage.setItem('refreshToken', data.data.refreshToken);
       localStorage.setItem('sid', data.data.sid);

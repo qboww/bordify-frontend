@@ -60,6 +60,30 @@ const AuthForm = ({
     mode: 'onChange',
   });
 
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const token = params.get('token');
+    
+    if (token) {
+      verifyEmailToken(token);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (errorMessage === 'Please verify your email first') {
+      dispatch(openResendVerifyEmailModal());
+    }
+  }, [errorMessage, dispatch]);
+  
+  const verifyEmailToken = async (token) => {
+    try {
+      await axios.get(`/api/auth/verify-email/${token}`);
+      toast.success('Email verified successfully!');
+    } catch (error) {
+      toast.error(error.response?.data?.message || 'Verification failed');
+    }
+  };
+
   const onSubmit = async (data) => {
     setErrorMessage('');
     try {

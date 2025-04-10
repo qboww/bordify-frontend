@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { lazy, useEffect } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
 import { DashboardLayout, WelcomePage, NotFound, AuthPage } from './pages';
 import PublicRoute from './routes/PublicRoute';
@@ -12,6 +12,7 @@ import GoogleRedirectPage from './pages/GoogleRedirectPage/GoogleRedirectPage';
 
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 const ScreensPage = lazy(() => import('./pages/ScreensPage/ScreensPage'));
+const EmailVerificationPage = lazy(() => import('./pages/EmailVerificationPage/EmailVerificationPage'));
 
 function App() {
   const dispatch = useDispatch();
@@ -34,6 +35,16 @@ function App() {
     <Loader />
   ) : (
     <Routes>
+      <Route 
+        path="/verify-email" 
+        element={
+          <PublicRoute>
+            <Suspense fallback={<Loader />}>
+              <EmailVerificationPage />
+            </Suspense>
+          </PublicRoute>
+        } 
+      />
       <Route path="/" element={<GoogleRedirectPage />} />
       <Route
         path="/dashboard"
