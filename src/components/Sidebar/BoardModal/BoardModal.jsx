@@ -77,13 +77,18 @@ const BoardModal = ({ type, title, chosenIcon, chosenBackGround, onClose }) => {
             _id: id,
           };
 
-    const board = await dispatch(options[type].onSubmitThunk(formData));
-
-    if (type === 'create') {
-      navigate(`/board/${board.payload.data._id}`);
+    try {
+      const result = await dispatch(options[type].onSubmitThunk(formData));
+      
+      if (type === 'create' && result.payload?.data?._id) {
+        navigate(`/dashboard/board/${result.payload.data._id}`);
+      }
+    } catch (error) {
+      console.error('Error creating board:', error);
+    } finally {
+      onClose();
+      reset();
     }
-    onClose();
-    reset();
   };
 
   return (
