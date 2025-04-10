@@ -50,32 +50,6 @@ export const deleteBoardThunk = createAsyncThunk(
   }
 );
 
-// export const backgroundUrl = createAsyncThunk(
-//   'backgrounds',
-//   async (_, thunkAPI) => {
-//     try {
-//       const { data } = await bordifyApi.get('/api/backgrounds');
-//       return data;
-//     } catch (error) {
-//       return thunkAPI.rejectWithValue(error.message);
-//     }
-//   }
-// );
-
-// export const changeBackground = createAsyncThunk(
-//   'boards/changeBackground',
-//   async ({ id, currentBg }, thunkAPI) => {
-//     try {
-//       const { data } = await bordifyApi.patch(`/api/boards/${id}/currentBg`, {
-//         currentBg,
-//       });
-//       return data;
-//     } catch (error) {
-//       return thunkAPI.rejectWithValue(error.message);
-//     }
-//   }
-// );
-
 export const fetchBoardByIdThunk = createAsyncThunk(
   'board/fetchBoardById',
   async (boardId, thunkAPI) => {

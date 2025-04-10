@@ -51,29 +51,27 @@ export const AuthPage = () => {
               </NavLink>
             </li>
           </ul>
-          
-          {/* Add Google Auth Button */}
-          <div className={css.socialAuthWrapper}>
-            <GoogleAuthButton onClick={handleGoogleAuth} />
+
+          <div className={css.btnWrapper}>
+            {type === 'login' ? (
+              <AuthForm
+                loginForm
+                key="login"
+                scheme={LoginSchame}
+                onSubmitThunk={loginThunk}
+              />
+            ) : (
+              <AuthForm
+                registerForm
+                key="register"
+                scheme={RegistrationSchame}
+                onSubmitThunk={registerThunk}
+              />
+            )}
+            <div className={css.socialAuthWrapper}>
+              <GoogleAuthButton onClick={handleGoogleAuth} />
+            </div>
           </div>
-          
-          <div className={css.divider}>or</div>
-          
-          {type === 'login' ? (
-            <AuthForm
-              loginForm
-              key="login"
-              scheme={LoginSchame}
-              onSubmitThunk={loginThunk}
-            />
-          ) : (
-            <AuthForm
-              registerForm
-              key="register"
-              scheme={RegistrationSchame}
-              onSubmitThunk={registerThunk}
-            />
-          )}
         </div>
       </div>
     </>

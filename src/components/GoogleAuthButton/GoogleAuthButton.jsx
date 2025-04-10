@@ -1,4 +1,3 @@
-// src/components/GoogleAuthButton/GoogleAuthButton.jsx
 import css from './GoogleAuthButton.module.css';
 import { FcGoogle } from 'react-icons/fc';
 

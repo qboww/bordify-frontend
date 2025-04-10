@@ -67,9 +67,10 @@ label {
   }
 }
 
-/* Add to AuthPage.module.css */
-.socialAuthWrapper {
-  margin-bottom: 20px;
+.btnWrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 
 .divider {
