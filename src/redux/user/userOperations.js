@@ -41,8 +41,11 @@ export const loginThunk = createAsyncThunk(
         'api/auth/login',
         credentials
       );
+      localStorage.setItem('accessToken', data.data.accessToken);
+      localStorage.setItem('refreshToken', data.data.refreshToken);
+      localStorage.setItem('sid', data.data.sid);
+      
       setToken(data.data.accessToken);
-
       return data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.response.status);
@@ -55,9 +58,10 @@ export const logoutThunk = createAsyncThunk(
   async (_, thunkApi) => {
     try {
       await bordifyApi.post('api/auth/logout');
+      localStorage.removeItem('accessToken');
+      localStorage.removeItem('refreshToken');
+      localStorage.removeItem('sid');
       clearToken();
-      localStorage.setItem('theme', 'dark');
-      document.documentElement.setAttribute('theme', 'dark');
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);
     }
@@ -137,7 +141,6 @@ export const resendVerificationEmailThunk = createAsyncThunk(
   }
 );
 
-// src/redux/user/userOperations.js
 export const googleAuthThunk = createAsyncThunk(
   'auth/google',
   async (_, thunkAPI) => {
@@ -155,7 +158,6 @@ export const googleAuthRedirectThunk = createAsyncThunk(
     try {
       const { sid, accessToken, refreshToken } = credentials;
 
-      // Save tokens to Redux state
       thunkAPI.dispatch(
         setCredentials({
           sid,
@@ -164,10 +166,8 @@ export const googleAuthRedirectThunk = createAsyncThunk(
         })
       );
 
-      // Set token for API calls
       setToken(accessToken);
 
-      // Fetch user data
       const { data } = await bordifyApi.get('api/auth/current');
       return data;
     } catch (error) {

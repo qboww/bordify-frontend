@@ -6,9 +6,11 @@ export const fetchBoardsThunk = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const { data } = await bordifyApi.get('api/boards');
-
       return data;
     } catch (error) {
+      if (error.response?.status === 401) {
+        thunkAPI.dispatch(logoutThunk());
+      }
       return thunkAPI.rejectWithValue(error.message);
     }
   }

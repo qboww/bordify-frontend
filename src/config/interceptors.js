@@ -8,10 +8,8 @@ bordifyApi.interceptors.response.use(
     const { status } = error.response || {};
     if (status === 401) {
       try {
-        // Call the refreshThunk action to refresh tokens
         await store.dispatch(refreshTokensThunk());
 
-        // Retry the original request after refreshing the token
         const retryOriginalRequest = new Promise((resolve, reject) => {
           const originalRequest = error.config;
           bordifyApi(originalRequest).then(resolve).catch(reject);
@@ -19,7 +17,6 @@ bordifyApi.interceptors.response.use(
 
         return retryOriginalRequest;
       } catch (refreshError) {
-        // Handle token refresh errors if necessary
         return Promise.reject(refreshError);
       }
     }
@@ -33,10 +30,8 @@ bordifyApiFormData.interceptors.response.use(
     const { status } = error.response || {};
     if (status === 401) {
       try {
-        // Call the refreshThunk action to refresh tokens
         await store.dispatch(refreshTokensThunk());
 
-        // Retry the original request after refreshing the token
         const retryOriginalRequest = new Promise((resolve, reject) => {
           const originalRequest = error.config;
           bordifyApi(originalRequest).then(resolve).catch(reject);
@@ -44,11 +39,49 @@ bordifyApiFormData.interceptors.response.use(
 
         return retryOriginalRequest;
       } catch (refreshError) {
-        // Handle token refresh errors if necessary
         return Promise.reject(refreshError);
       }
     }
 
+    return Promise.reject(error);
+  }
+);
+
+bordifyApi.interceptors.request.use((config) => {
+  const token = localStorage.getItem('accessToken'); 
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+});
+
+bordifyApi.interceptors.response.use(
+  (response) => response,
+  async (error) => {
+    const originalRequest = error.config;
+    
+    if (error.response.status === 401 && !originalRequest._retry) {
+      originalRequest._retry = true;
+      
+      try {
+        const refreshResponse = await bordifyApi.post('api/auth/refresh', {
+          sid: localStorage.getItem('sid') 
+        });
+        
+        const { accessToken, refreshToken } = refreshResponse.data;
+        localStorage.setItem('accessToken', accessToken);
+        localStorage.setItem('refreshToken', refreshToken);
+        
+        originalRequest.headers.Authorization = `Bearer ${accessToken}`;
+        return bordifyApi(originalRequest);
+      } catch (refreshError) {
+        localStorage.removeItem('accessToken');
+        localStorage.removeItem('refreshToken');
+        window.location.href = '/login'; 
+        return Promise.reject(refreshError);
+      }
+    }
+    
     return Promise.reject(error);
   }
 );
