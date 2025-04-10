@@ -29,7 +29,7 @@ export const customStyles = {
     border: 'none',
     boxShadow: 'none',
     border: '1px solid var(--button-background-color)',
-    borderRadius: '8px',
+    borderRadius: '5px',
     textAlign: 'left',
     overflow: 'hidden',
     padding: '0px',
@@ -43,7 +43,7 @@ export const customStyles = {
     ...provided,
     border: 'none',
     backgroundColor: 'var(--background-header)',
-    borderRadius: '8px',
+    borderRadius: '5px',
     color: state.isSelected
       ? 'var(--button-background-color)'
       : 'var(--text-color)',
@@ -80,7 +80,7 @@ export const customStyles = {
     ...provided,
     opacity: 0,
     pointerEvents: 'none',
-    borderRadius: '8px',
+    borderRadius: '5px',
   }),
 };
 

@@ -18,7 +18,7 @@ export const customStyles = {
   menu: () => ({
     border: '1px solid var(--button-background-color-hoover)',
     backgroundColor: 'var(--filter-bgc)',
-    borderRadius: '8px',
+    borderRadius: '5px',
     width: '300px',
     padding: '0',
     position: 'absolute',
