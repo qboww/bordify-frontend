@@ -1,4 +1,40 @@
-.icon{
-fill:none;
-stroke:var(--dedline-bell);
+.icon {
+    fill: none;
+}
+
+.icon[data-state="missed"] {
+    stroke: var(--color-warning);
+}
+
+.icon[data-state="approaching"] {
+    stroke: var(--color-success);
+}
+
+.iconWrapper {
+    position: relative;
+    display: inline-block;
+    height: 18px;
+}
+
+.tooltip {
+    visibility: hidden;
+    width: max-content;
+    background-color: var(--button-background-color);
+    color: var(--button-text-color);
+    text-align: center;
+    border-radius: 4px;
+    padding: 4px 8px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 12px;
+}
+
+.iconWrapper:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
 }

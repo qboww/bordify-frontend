@@ -74,7 +74,7 @@ const CustomMenu = props => {
         <div className={css.separator}></div>
         
         <div className={css.section}>
-          <div className={css.sectionTitle}>Priority label</div>
+          <div className={css.sectionTitle}>Filter by priority</div>
           <div className={css.optionsContainer}>
             {props.children}
           </div>

@@ -48,10 +48,7 @@
   border-radius: 5px;
   position: relative;
   padding: 24px;
-  /* overflow: hidden; */
   min-width: 320px;
-  /* width: 100%; */
-  /* max-width: 335px; */
   display: flex;
   flex-direction: column;
   gap: 24px;

@@ -1,4 +1,3 @@
-// src/pages/AuthPage/AuthPage.jsx
 import { NavLink, useParams } from 'react-router-dom';
 import AuthForm from '../../components/AuthForm/AuthForm';
 import { LoginSchame, RegistrationSchame } from '../../schemas/AuthSchemas';

@@ -16,7 +16,7 @@ const WarningDeadline = ({ deadline }) => {
         const hoursMissed = Math.abs(hoursLeft);
         setWarningState(hoursMissed >= 24 ? 'missed' : null);
       } else {
-        setWarningState(hoursLeft < 24 ? 'approaching' : null);
+        setWarningState(hoursLeft < 168 ? 'approaching' : null);
       }
     };
 
@@ -29,9 +29,19 @@ const WarningDeadline = ({ deadline }) => {
   if (!warningState) return null;
 
   return (
-    <svg width="18" height="18" className={css.icon}>
-      <use href={`${icon}#icon-${warningState === 'missed' ? 'alert' : 'bell'}`}></use>
-    </svg>
+    <div className={css.iconWrapper}>
+      <svg 
+        width="18" 
+        height="18" 
+        className={css.icon}
+        data-state={warningState}
+      >
+        <use href={`${icon}#icon-${warningState === 'missed' ? 'alert' : 'bell'}`}></use>
+      </svg>
+      <span className={css.tooltip}>
+        {warningState === 'missed' ? 'Deadline missed!' : 'Deadline approaching'}
+      </span>
+    </div>
   );
 };
 

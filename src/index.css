@@ -23,6 +23,9 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --color-warning: #f44336;
+  --color-success: #ff8a50;
 }
 
 [theme='dark'] {

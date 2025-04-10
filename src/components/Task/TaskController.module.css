@@ -1,7 +1,7 @@
 .taskActions {
   margin-left: auto;
   align-items: flex-end;
-  gap: 8px;
+  gap: 12px;
 }
 .taskIcon {
   width: 18px;

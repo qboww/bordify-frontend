@@ -7,8 +7,10 @@ const Welcome = () => {
   return (
     <div className={css.background}>
       <Logo big />
+      
       <p className={css.info}>
-      Your goals deserve the best chance - give them Boardify. Turn overwhelming lists into satisfying checkmarks, one organized board at a time!
+          Turn overwhelming lists into satisfying checkmarks, one organized board
+          at a time!
       </p>
 
       <div className={css.authNav}>
@@ -19,6 +21,7 @@ const Welcome = () => {
           <Button typeStyle="secondary" buttonText="Log In" />
         </NavLink>
       </div>
+      
     </div>
   );
 };

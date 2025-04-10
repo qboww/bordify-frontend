@@ -121,10 +121,6 @@ const AuthForm = ({
           required
         />
         
-        {errorMessage && (
-          <div className={css.errorMessage}>{errorMessage}</div>
-        )}
-
         <Button
           className={css.buttonStyles}
           type="submit"
