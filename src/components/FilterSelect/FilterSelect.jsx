@@ -15,10 +15,10 @@ import css from './FilterSelect.module.css';
 const FilterSelect = () => {
   const dispatch = useDispatch();
 
-  const handleChange = ({ value }, selectProps) => {
+  const handleChange = ({ value }) => {
     dispatch(setNewFilter(value));
   };
-
+  
   const filter = useSelector(selectNewFilter); 
 
   return (
@@ -35,7 +35,8 @@ const FilterSelect = () => {
         styles={customStyles}
         placeholder=""
         components={{ Option: CustomOption, Menu: CustomMenu }}
-        onChange={value => handleChange(value)}
+        onChange={handleChange}
+        closeMenuOnSelect={false} 
         selectProps={{
           handleChange,
         }}

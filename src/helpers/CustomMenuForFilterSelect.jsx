@@ -2,7 +2,7 @@ import { components } from 'react-select';
 import { useDispatch } from 'react-redux';
 import svg from '../images/icons.svg';
 import css from '../components/FilterSelect/FilterSelect.module.css';
-import { setNewFilter, setSortOrder, setDeadlineSortOrder  } from '../redux/columns/filterSlice';
+import { setNewFilter, setSortOrder, setDeadlineSortOrder, setDeadlineFilter  } from '../redux/columns/filterSlice';
 
 const CustomMenu = props => {
   const { selectProps } = props;
@@ -13,12 +13,10 @@ const CustomMenu = props => {
       selectProps.onMenuClose();
     }
   };
+  
 
-  const handleFilterChange = ({ value }) => {
-    dispatch(setNewFilter(value));
-    if (selectProps && selectProps.onMenuClose) {
-      selectProps.onMenuClose();
-    }
+  const handleDeadlineFilterChange = (filter) => {
+    dispatch(setDeadlineFilter(filter));
   };
 
   const handleSortChange = (order) => {
@@ -31,9 +29,8 @@ const CustomMenu = props => {
 
   const handleShowAll = () => {
     dispatch(setNewFilter('showAll'));
-    if (selectProps && selectProps.onMenuClose) {
-      selectProps.onMenuClose();
-    }
+    dispatch(setDeadlineSortOrder('default'));
+    dispatch(setDeadlineFilter('all'));
   };
 
   return (
@@ -48,6 +45,32 @@ const CustomMenu = props => {
           </button>
         </div>
         
+        <div className={css.separator}></div>
+
+        <div className={css.section}>
+          <div className={css.sectionTitle}>Filter by deadline</div>
+          <div className={css.sortButtons}>
+            <button
+              className={css.sortButton}
+              onClick={() => handleDeadlineFilterChange('all')}
+            >
+              All tasks
+            </button>
+            <button
+              className={css.sortButton}
+              onClick={() => handleDeadlineFilterChange('overdue')}
+            >
+              Overdue
+            </button>
+            <button
+              className={css.sortButton}
+              onClick={() => handleDeadlineFilterChange('upcoming')}
+            >
+              Upcoming
+            </button>
+          </div>
+        </div>
+
         <div className={css.separator}></div>
         
         <div className={css.section}>

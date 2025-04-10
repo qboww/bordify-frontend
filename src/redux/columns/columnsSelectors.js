@@ -1,5 +1,5 @@
 import { createSelector } from '@reduxjs/toolkit';
-import { selectNewFilter, selectSortOrder, selectDeadlineSortOrder   } from './filterSlice';
+import { selectNewFilter, selectSortOrder, selectDeadlineSortOrder, selectDeadlineFilter } from './filterSlice';
 
 export const selectBoardId = state => state.columns.boardId;
 export const selectBoardTitle = state => state.columns.boardTitle;
@@ -19,13 +19,35 @@ const priorityOrder = {
 };
 
 export const selectFilteredTasks = createSelector(
-  [selectColumnsWithinBoard, selectNewFilter, selectSortOrder, selectDeadlineSortOrder],
-  (columns, filter, sortOrder, deadlineSortOrder) => {
+  [selectColumnsWithinBoard, selectNewFilter, selectSortOrder, selectDeadlineSortOrder, selectDeadlineFilter],
+  (columns, filter, sortOrder, deadlineSortOrder, deadlineFilter) => {
     let filteredColumns = columns;
     
     if (filter !== 'showAll') {
       filteredColumns = columns.map(column => {
         const tasks = column.tasks.filter(task => task.priority === filter);
+        return { ...column, tasks };
+      });
+    }
+
+    if (deadlineFilter !== 'all') {
+      const currentDate = new Date();
+      currentDate.setHours(0, 0, 0, 0);
+
+      filteredColumns = filteredColumns.map(column => {
+        const tasks = column.tasks.filter(task => {
+          if (!task.deadline) return false;
+          
+          const taskDate = new Date(task.deadline);
+          taskDate.setHours(0, 0, 0, 0);
+          
+          if (deadlineFilter === 'overdue') {
+            return taskDate < currentDate;
+          } else if (deadlineFilter === 'upcoming') {
+            return taskDate >= currentDate;
+          }
+          return true;
+        });
         return { ...column, tasks };
       });
     }
