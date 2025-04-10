@@ -1,5 +1,7 @@
 import Select from 'react-select';
 import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { selectNewFilter } from '../../redux/columns/filterSlice';
 
 import { setNewFilter } from '../../redux/columns/filterSlice';
 import options from '../../helpers/optionsForFilterSelect';
@@ -17,6 +19,8 @@ const FilterSelect = () => {
     dispatch(setNewFilter(value));
   };
 
+  const filter = useSelector(selectNewFilter); 
+
   return (
     <>
       <div className={css.container}>
@@ -26,6 +30,7 @@ const FilterSelect = () => {
         <span className={css.text}>Filters</span>
       </div>
       <Select
+        value={filter !== 'showAll' ? options.find(opt => opt.value === filter) : null}
         options={options}
         styles={customStyles}
         placeholder=""

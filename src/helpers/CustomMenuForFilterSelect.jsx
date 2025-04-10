@@ -2,7 +2,7 @@ import { components } from 'react-select';
 import { useDispatch } from 'react-redux';
 import svg from '../images/icons.svg';
 import css from '../components/FilterSelect/FilterSelect.module.css';
-import { setNewFilter, setSortOrder } from '../redux/columns/filterSlice';
+import { setNewFilter, setSortOrder, setDeadlineSortOrder  } from '../redux/columns/filterSlice';
 
 const CustomMenu = props => {
   const { selectProps } = props;
@@ -23,6 +23,10 @@ const CustomMenu = props => {
 
   const handleSortChange = (order) => {
     dispatch(setSortOrder(order));
+  };
+
+  const handleDeadlineSortChange = (order) => {
+    dispatch(setDeadlineSortOrder(order));
   };
 
   const handleShowAll = () => {
@@ -72,13 +76,34 @@ const CustomMenu = props => {
             </button>
           </div>
         </div>
+
+        <div className={css.section}>
+          <div className={css.sectionTitle}>Sort by deadline</div>
+          <div className={css.sortButtons}>
+            <button
+              className={css.sortButton}
+              onClick={() => handleDeadlineSortChange('asc')}
+            >
+              Earliest First
+            </button>
+            <button
+              className={css.sortButton}
+              onClick={() => handleDeadlineSortChange('desc')}
+            >
+              Latest First
+            </button>
+          </div>
+        </div>
         
-        <div className={css.footer}>
+         <div className={css.footer}>
           <button
             className={css.showAllButton}
-            onClick={handleShowAll}
+            onClick={() => {
+              handleShowAll();
+              dispatch(setDeadlineSortOrder('default'));
+            }}
           >
-            Show all
+            Reset all filters
           </button>
         </div>
       </div>

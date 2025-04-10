@@ -1,5 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
-import { selectNewFilter, selectSortOrder  } from './filterSlice';
+import { selectNewFilter, selectSortOrder, selectDeadlineSortOrder   } from './filterSlice';
+
 export const selectBoardId = state => state.columns.boardId;
 export const selectBoardTitle = state => state.columns.boardTitle;
 export const selectBoardIcon = state => state.columns.boardIcon;
@@ -18,9 +19,8 @@ const priorityOrder = {
 };
 
 export const selectFilteredTasks = createSelector(
-  [selectColumnsWithinBoard, selectNewFilter, selectSortOrder],
-  (columns, filter, sortOrder) => {
-    // First filter the tasks
+  [selectColumnsWithinBoard, selectNewFilter, selectSortOrder, selectDeadlineSortOrder],
+  (columns, filter, sortOrder, deadlineSortOrder) => {
     let filteredColumns = columns;
     
     if (filter !== 'showAll') {
@@ -30,7 +30,6 @@ export const selectFilteredTasks = createSelector(
       });
     }
 
-    // Then sort if needed
     if (sortOrder !== 'default') {
       filteredColumns = filteredColumns.map(column => {
         const tasks = [...column.tasks].sort((a, b) => {
@@ -38,6 +37,26 @@ export const selectFilteredTasks = createSelector(
             return priorityOrder[a.priority] - priorityOrder[b.priority];
           } else {
             return priorityOrder[b.priority] - priorityOrder[a.priority];
+          }
+        });
+        return { ...column, tasks };
+      });
+    }
+
+    if (deadlineSortOrder !== 'default') {
+      filteredColumns = filteredColumns.map(column => {
+        const tasks = [...column.tasks].sort((a, b) => {
+          const dateA = a.deadline ? new Date(a.deadline) : null;
+          const dateB = b.deadline ? new Date(b.deadline) : null;
+          
+          if (!dateA && !dateB) return 0;
+          if (!dateA) return 1;
+          if (!dateB) return -1;
+          
+          if (deadlineSortOrder === 'asc') {
+            return dateA - dateB;
+          } else {
+            return dateB - dateA;
           }
         });
         return { ...column, tasks };
