@@ -18,8 +18,8 @@ export const AuthPage = () => {
     <>
       <DocumentTitle>
         {type === 'login'
-          ? 'Log in to your account and start using our service'
-          : 'Register and start using our service'}
+          ? 'Log in'
+          : 'Register'}
       </DocumentTitle>
 
       <div className={css.background}>
