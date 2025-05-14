@@ -1,8 +1,0 @@
-{
-  "routes": [
-    {
-      "src": "/bordify/(.*)",
-      "dest": "/bordify/index.html"
-    }
-  ]
-}
