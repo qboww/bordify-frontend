@@ -95,7 +95,7 @@ export const ListMyBoards = ({ className }) => {
         <Modal
           isOpen={isEditBoardOpen}
           closeModal={closeEditBoardModaal}
-          title="Edit profile"
+          title="Edit dashboard"
         >
           <BoardModal
             type="edit"

@@ -1,22 +1,29 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
 import { visualizer } from 'rollup-plugin-visualizer';
+import path from 'path';
 
 export default defineConfig({
+  root: './', 
   plugins: [
-    react({ reactRefresh: true }),
+    react(),
     visualizer({
-      open: true,
-      filename: "stats.html",
+      open: false,
+      filename: 'stats.html',
       gzipSize: true,
       brotliSize: true,
-      template: "treemap",
-      // Remove the `exclude` option for now
+      template: 'treemap',
     }),
   ],
   build: {
     sourcemap: true,
     chunkSizeWarningLimit: 1000,
+    outDir: 'dist',
   },
-  base: "/"
+  base: '/', // для dev
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
 });
