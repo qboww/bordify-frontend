@@ -1,6 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { bordifyApi } from '../../config/api';
 import { bordifyApiUnAutorized } from '../../config/api';
+const { VITE_API_URL } = import.meta.env;
 
 export const setToken = accessToken => {
   bordifyApi.defaults.headers.common.Authorization = `Bearer ${accessToken}`;
@@ -150,7 +151,7 @@ export const googleAuthThunk = createAsyncThunk(
   'auth/google',
   async (_, thunkAPI) => {
     try {
-      window.location.href = 'http://localhost:3000/api/auth/google';
+      window.location.href = `${import.meta.env.VITE_API_URL}/api/auth/google`;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }

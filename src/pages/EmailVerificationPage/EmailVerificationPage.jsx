@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import axios from 'axios';
+const { VITE_API_URL } = import.meta.env;
 
 export default function EmailVerificationPage() {
   const [searchParams] = useSearchParams();
@@ -11,7 +12,7 @@ export default function EmailVerificationPage() {
   useEffect(() => {
     const verifyEmail = async () => {
       try {
-        await axios.get(`http://localhost:3000/api/auth/verify-email/${token}`);
+        await axios.get(`${VITE_API_URL}/api/auth/verify-email/${token}`);
         toast.success('Email verified successfully!');
         navigate('/login');
       } catch (error) {

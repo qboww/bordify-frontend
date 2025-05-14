@@ -6,12 +6,13 @@ import css from './AuthPage.module.css';
 import DocumentTitle from '../../components/Title/Title';
 import { GoogleAuthButton } from '../../components/GoogleAuthButton/GoogleAuthButton';
 import { googleAuthThunk } from '../../redux/user/userOperations';
+const { VITE_API_URL } = import.meta.env;
 
 export const AuthPage = () => {
   const { type } = useParams();
 
   const handleGoogleAuth = () => {
-    window.location.href = 'http://localhost:3000/api/auth/google';
+    window.location.href = `${VITE_API_URL}/api/auth/google`;
   };
 
   return (

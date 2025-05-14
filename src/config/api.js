@@ -1,21 +1,17 @@
 import axios from 'axios';
+const { VITE_API_URL } = import.meta.env;
+
 export const bordifyApiUnAutorized = axios.create({
-  baseURL: 'http://localhost:3000/',
-  headers: {
-    'Content-Type': 'application/json',
-  },
+  baseURL: `${VITE_API_URL}/`,
+  headers: { 'Content-Type': 'application/json' },
 });
 
 export const bordifyApi = axios.create({
-  baseURL: 'http://localhost:3000/',
-  headers: {
-    'Content-Type': 'application/json',
-  },
+  baseURL: `${VITE_API_URL}/`,
+  headers: { 'Content-Type': 'application/json' },
 });
 
 export const bordifyApiFormData = axios.create({
-  baseURL: 'http://localhost:3000/',
-  headers: {
-    'Content-Type': 'multipart/form-data',
-  },
+  baseURL: `${VITE_API_URL}/`,
+  headers: { 'Content-Type': 'multipart/form-data' },
 });
