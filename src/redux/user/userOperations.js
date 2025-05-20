@@ -17,12 +17,10 @@ export const registerThunk = createAsyncThunk(
   'auth/register',
   async (credentials, thunkApi) => {
     try {
-      console.log('Sending registration request with:', credentials);
       const { data } = await bordifyApiUnAutorized.post(
         'api/auth/register',
         credentials
       );
-      console.log('Registration response:', data);
       return data;
     } catch (error) {
       console.error(

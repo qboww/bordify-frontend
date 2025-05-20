@@ -113,8 +113,6 @@ const columnSlice = createSlice({
         state.columnsL.push(payload.data);
       })
       .addCase(updateColumnThunk.fulfilled, (state, action) => {
-        console.log(action);
-
         const column = state.columnsL.find(
           column => column._id === action.payload.data._id
         );
