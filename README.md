@@ -9,6 +9,7 @@
 - Фронтенд live: [https://bordify-frontend.onrender.com](https://bordify-frontend.onrender.com)
 - Бекенд API: [https://bordify-backend.onrender.com](https://bordify-backend.onrender.com)
 - Uptime Robot: [![Backend Uptime](https://img.shields.io/uptimerobot/status/m800575843-6d54d4dbb3b8823b35a679ac)](https://stats.uptimerobot.com/3H4vuDHzkP)
+- Github Actions: ![CI](https://github.com/qboww/bordify-backend/actions/workflows/ci.yml/badge.svg)
 
 ## 🛠 Стек технологій
 
