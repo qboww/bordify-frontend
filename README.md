@@ -5,9 +5,9 @@
 Фронтенд і бекенд повністю розгорнуті на платформі [Render](https://render.com).
 
 ## 🌐 Додаткові посилання
+- Backend репозиторій доступний за адресою: [https://github.com/qboww/bordify-backend](https://github.com/qboww/bordify-backend)
 - Фронтенд live: [https://bordify-frontend.onrender.com](https://bordify-frontend.onrender.com)
 - Бекенд API: [https://bordify-backend.onrender.com](https://bordify-backend.onrender.com)
-- Backend репозиторій доступний за адресою: [https://github.com/qboww/bordify-backend](https://github.com/qboww/bordify-backend)
 - Uptime Robot: [![Backend Uptime](https://img.shields.io/uptimerobot/status/m800575843-6d54d4dbb3b8823b35a679ac)](https://stats.uptimerobot.com/3H4vuDHzkP)
 
 ## 🛠 Стек технологій
